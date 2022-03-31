@@ -100,8 +100,10 @@
               alt="Purple dot pattern for introductory section"
               class="landing-page__introduction-text-container__dot-pattern bottom-left"
             />
-            <h1 class="text-white">A small business is only as good as its tools.</h1>
-            <p class="text-light-grey-3 mt-sm">We’re different. Flex is the only saas business
+            <h1 class="landing-page__introduction-text-container__primary-heading--main
+            text-white">A small business is only as good as its tools.</h1>
+            <p class="landing-page__introduction-text-container__primary-heading--sub
+            text-light-grey-3 mt-sm">We’re different. Flex is the only saas business
               platform that lets you run your business on one platform, seamlessly across
               all digital channels.</p>
               <!-- Button && Input Section -->
@@ -126,7 +128,8 @@
                   Get early access
                 </BaseButton>
               </form>
-              <p class="text-light-grey-3 mt-sm">
+              <p class="landing-page__introduction-text-container__secondary-heading
+               text-light-grey-3 mt-sm">
                 Start your free 14-day trial today, no credit card required.
               </p>
           </div>
@@ -136,7 +139,10 @@
 
         <!-- Start of area showing clients and their logos -->
         <div class="landing-page__introduction-section__clients">
-          <p class="text-light-grey-2 mt-md mb-sm">Join 4,000+ companies already growing</p>
+          <p class="landing-page__introduction-section__primary-heading
+          text-light-grey-2 mt-md mb-sm">
+            Join 4,000+ companies already growing
+          </p>
           <img
             src="/patterns/radial-pattern-grey.png"
             class="landing-page__introduction-section__radial-pattern"
@@ -190,14 +196,16 @@
             features
           </span>
           <div class="landing-page__what-we-do__titles margin-center">
-            <h1>Gain more insight into how people use your</h1>
-            <p class="text-dark-grey-2 mt-sm">With our integrated CRM, project management,
-              collaboration and invoicing capabilities,
+            <h1 class="landing-page__what-we-do__primary-heading--main">
+              Gain more insight into how people use your
+            </h1>
+            <p class="landing-page__what-we-do__primary-heading--sub text-dark-grey-2 mt-sm">
+              With our integrated CRM, project management, collaboration and invoicing capabilities,
               you can manage every aspect of your business in one secure platform.</p>
           </div>
         </div>
 
-        <div class="landing-page__what-we-do__items mt-md">
+        <div class="landing-page__what-we-do__items mt-lg">
           <WhatWeDo
             class="landing-page__what-we-do__item mb-md"
             v-for="(val, index) in whatWeDoItems"
@@ -209,8 +217,10 @@
 <!-- Beginning of Gettting Started Black Background Box -->
         <div class="landing-page__get-started-box bg-dark-1 mt-sm">
           <div>
-            <h1 class="text-white">The fastest way from idea to live site. Period.</h1>
-            <p class="text-light-grey-3 mt-sm">Flex is a Small SaaS Business.
+            <h1 class="landing-page__get-started-box__primary-heading--main
+            text-white">The fastest way from idea to live site. Period.</h1>
+            <p class="landing-page__get-started-box__primary-heading--sub
+            text-light-grey-3 mt-sm">Flex is a Small SaaS Business.
               Flex isn’t a traditional company.</p>
           </div>
           <div class="landing-page__get-started-box__btns" >
@@ -221,7 +231,7 @@
             </BaseButton>
             <BaseButton
               type="submit"
-              class="landing-page__get-started-box__btn br-sm text-dark-grey-3">
+              class="landing-page__get-started-box__btn br-sm text-dark-grey-3 bg-white">
               Learn More
             </BaseButton>
           </div>
@@ -247,8 +257,12 @@
           </span>
         </div>
         <div class="landing-page__what-we-do-II__titles margin-center text-center">
-          <h1>Gain more insight into how people use your</h1>
-          <p class="text-dark-grey-2 mt-sm">With our integrated CRM, project management,
+          <h1 class="landing-page__what-we-do-II__primary-heading--main">
+            Gain more insight into how people use your
+          </h1>
+          <p class="landing-page__what-we-do-II__primary-heading--sub
+          text-dark-grey-2 mt-sm">
+            With our integrated CRM, project management,
             collaboration and invoicing capabilities,
             you can manage every aspect of your business in one secure platform.</p>
         </div>
@@ -321,10 +335,14 @@
           </span>
         </div>
         <div class="landing-page__what-we-do-III__titles margin-center text-center">
-          <h1>Gain more insight into how people use your</h1>
-          <p class="text-dark-grey-2 mt-sm">With our integrated CRM, project management,
+          <h1 class="landing-page__what-we-do-III__primary-heading--main">
+            Gain more insight into how people use your
+          </h1>
+          <p class="landing-page__what-we-do-III__primary-heading--sub text-dark-grey-2 mt-sm">
+            With our integrated CRM, project management,
             collaboration and invoicing capabilities,
-            you can manage every aspect of your business in one secure platform.</p>
+            you can manage every aspect of your business in one secure platform.
+          </p>
           <BaseButton
             type="submit"
             class="landing-page__what-we-do-III__btn text-white
@@ -379,10 +397,15 @@
           </span>
         </div>
         <div class="landing-page__staying-connected__titles margin-center text-center">
-          <h1 class="text-black">Let’s stay connected</h1>
-          <p class="text-dark-grey-2 mt-sm">It's never been easier to get in touch with
+          <h1 class="landing-page__staying-connected__primary-heading--main text-black">
+            Let’s stay connected
+          </h1>
+          <p class="landing-page__staying-connected__primary-heading--sub
+            text-dark-grey-2 mt-sm">
+            It's never been easier to get in touch with
             Flex. Call us, use our live chat widget or email and we'll get back to you
-             as soon as possible!</p>
+             as soon as possible!
+          </p>
         </div>
         <div class="landing-page__staying-connected__social-media text-center mt-md">
           <div class="landing-page__staying-connected__medium">
@@ -620,6 +643,9 @@ export default {
     @include mobile-only {
       padding: $mobile-section-padding;
     }
+    &__primary-heading {
+      font-size: $font-size-medium;
+    }
     &__clients {
       position: relative;
       z-index: 2;
@@ -654,6 +680,17 @@ export default {
     }
   }
   &__introduction-text-container {
+    &__primary-heading {
+      &--main {
+        font-size: $font-size-regular;
+      }
+      &--sub {
+        font-size: $font-size-medium;
+      }
+    }
+    &__secondary-heading {
+      font-size: $font-size-small;
+    }
     &--outer {
       background: $primary-black;
       position: relative;
@@ -701,7 +738,7 @@ export default {
       height: 100%;
     }
     &__btn {
-      font-size: 1rem;
+      font-size: $font-size-small;
       align-self: flex-end;
     }
     &__input-container {
@@ -729,6 +766,17 @@ export default {
     @include mobile-only {
       padding: $mobile-section-padding;
     }
+    &__heading {
+      font-size: $font-size-small;
+    }
+    &__primary-heading {
+      &--main {
+        font-size: $font-size-regular;
+      }
+      &--sub {
+        font-size: $font-size-medium;
+      }
+    }
     &__titles {
       @include mobile-only {
         width: $mobile-width-percentage;
@@ -748,6 +796,14 @@ export default {
     padding: 1.5rem 1rem;
     @include flex-justify-between;
     align-items: center;
+    &__primary-heading {
+      &--main {
+        font-size: $font-size-regular
+      }
+      &--sub {
+        font-size: $font-size-small;
+      }
+    }
     &__btns {
       text-align: right;
     }
@@ -764,6 +820,14 @@ export default {
     z-index: 2;
     @include mobile-only {
       padding: $mobile-section-padding;
+    }
+    &__primary-heading {
+      &--main {
+        font-size: $font-size-regular
+      }
+      &--sub {
+        font-size: $font-size-medium;
+      }
     }
     &__titles {
       @include mobile-only {
@@ -823,6 +887,14 @@ export default {
     @include mobile-only {
       padding: $mobile-section-padding;
     }
+    &__primary-heading {
+      &--main {
+        font-size: $font-size-regular
+      }
+      &--sub {
+        font-size: $font-size-medium;
+      }
+    }
     &__titles {
       @include mobile-only {
         width: $mobile-width-percentage;
@@ -867,6 +939,20 @@ export default {
     background-color: $primary-white;
     @include mobile-only {
       padding: $mobile-section-padding;
+    }
+    &__primary-heading {
+      &--main {
+        font-size: $font-size-regular
+      }
+      &--sub {
+        font-size: $font-size-medium;
+      }
+    }
+    &__primary-text {
+      font-size: $font-size-regular;
+    }
+    &__secondary-text {
+      font-size: $font-size-small;
     }
     &__radial-pattern {
       @include radial-pattern;

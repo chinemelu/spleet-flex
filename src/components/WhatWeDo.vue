@@ -49,8 +49,11 @@ export default {
   }
   &__primary-text {
     @include mobile-only {
-      height: auto;
+      font-size: $font-size-regular;
     }
+  }
+  &__secondary-text {
+    font-size: $font-size-small;
   }
 }
 </style>

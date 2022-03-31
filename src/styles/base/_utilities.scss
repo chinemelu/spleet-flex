@@ -9,12 +9,12 @@
 .text-black { color: $primary-black !important; }
 .text-center { text-align: center !important; }
 .mb-sm { margin-bottom: 1.5rem !important; }
-.mb-md { margin-bottom: 2rem !important;  }
+.mb-md { margin-bottom: 3rem !important;  }
 .mb-lg { margin-bottom: 8rem !important;  }
 .mt-xs { margin-top: 1rem !important; }
 .mt-sm { margin-top: 1.5rem !important; }
 .mt-bg { margin-top: 8rem !important;  }
-.mt-md { margin-top: 2rem !important;  }
+.mt-md { margin-top: 3rem !important;  }
 .mt-lg { margin-top: 5rem !important; }
 .mt-xl { margin-top: 10rem !important; }
 .ml-sm { margin-left: 1.5rem !important; }
@@ -24,6 +24,7 @@
 .bg-color-primary-light { background-color: $color-primary-light !important; }
 .bg-dark-1 { background-color: $primary-black !important;}
 .bg-grey { background: $bg-grey !important;}
+.bg-white { background: $primary-white !important;}
 .br-sm { border-radius: 8px !important; }
 .br-md { border-radius: 1rem !important; }
 .pt-sm { padding-top: 3px !important; }
