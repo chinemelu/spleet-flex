@@ -14,16 +14,20 @@ export default {
       type: Object,
       default: () => ({
         alt: {
-          type: String,
+          type: 'String',
+          default: '',
         },
         imgSrc: {
           type: String,
+          default: '',
         },
         primaryText: {
           type: String,
+          default: '',
         },
         secondaryText: {
           type: String,
+          default: '',
         },
       }),
     },

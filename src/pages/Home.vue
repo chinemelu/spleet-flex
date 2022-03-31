@@ -234,7 +234,7 @@
 <!-- Beginning of Second Part of What We do -->
       <section class="mt-lg landing-page__what-we-do-II bg-grey">
         <img
-            src="/patterns/radial-pattern-white.png"
+            src="/patterns/radial-pattern-grey.png"
             class="landing-page__what-we-do-II__radial-pattern"
             alt="Radial Pattern"
           />
@@ -263,11 +263,33 @@
             />
           </div>
           <div class="landing-page__what-we-do-II__image-container text-center mt-lg">
-            <img
-              src="/images/laptop-img.png"
-              alt="Laptop image for second part of what we do"
-              class="landing-page__what-we-do-II__image"
-            />
+            <picture>
+              <source
+                media="(max-width: 599px)"
+                srcset="images/laptop-img-mobile.webp"
+                type="image/webp"
+              >
+              <source
+                media="(max-width: 599px)"
+                srcset="images/laptop-img-mobile.png"
+                type="image/png"
+              >
+              <source
+                media="(min-width: 600px)"
+                srcset="images/laptop-img.webp"
+                type="image/webp"
+              >
+              <source
+                media="(min-width: 600px)"
+                srcset="images/laptop-img.png"
+                type="image/png"
+              >
+              <img
+                src="/images/laptop-img.png"
+                alt="Laptop image for second part of what we do"
+                class="landing-page__what-we-do-II__image"
+              />
+            </picture>
             <img
               src="/patterns/blue-dot-pattern.png"
               alt="Blue dot pattern for what we do section"
@@ -286,7 +308,7 @@
 <!-- Beginning of Third Part of What We do -->
       <section class="landing-page__what-we-do-III bg-grey">
         <img
-            src="/patterns/radial-pattern-white.png"
+            src="/patterns/radial-pattern-grey.png"
             class="landing-page__what-we-do-III__radial-pattern"
             alt="Radial Pattern"
           />
@@ -306,7 +328,7 @@
           <BaseButton
             type="submit"
             class="landing-page__what-we-do-III__btn text-white
-            bg-primary-color br-sm pt-md pl-md pr-md pb-md ml-sm mt-sm">
+            bg-primary-color br-sm pt-md pl-md pr-md pb-md mt-sm">
             Get Started
           </BaseButton>
         </div>
@@ -340,6 +362,125 @@
         </div>
       </section>
   <!-- End of Third Part of What We do -->
+
+<!-- Beginning of Staying Connected Section -->
+      <section class="mt-lg landing-page__staying-connected bg-white">
+        <img
+            src="/patterns/radial-pattern-white.png"
+            class="landing-page__staying-connected__radial-pattern"
+            alt="Radial Pattern"
+          />
+        <div class="text-center landing-page__staying-connected__features-text-container">
+          <span
+            class="landing-page__what-we-do__heading d-inline-block
+            text-upper bg-color-primary-light text-color-primary
+            br-md pl-sm pr-sm pt-sm pb-sm mb-sm">
+            contact
+          </span>
+        </div>
+        <div class="landing-page__staying-connected__titles margin-center text-center">
+          <h1 class="text-black">Let’s stay connected</h1>
+          <p class="text-dark-grey-2 mt-sm">It's never been easier to get in touch with
+            Flex. Call us, use our live chat widget or email and we'll get back to you
+             as soon as possible!</p>
+        </div>
+        <div class="landing-page__staying-connected__social-media text-center mt-md">
+          <div class="landing-page__staying-connected__medium">
+            <img
+              alt="Email Icon"
+              src="/icons/email-icon.png"
+              class="landing-page__staying-connected__icon"
+            />
+            <h1 class="landing-page__staying-connected__primary-text text-black mt-xs">
+              Email
+            </h1>
+            <p
+              class="landing-page__staying-connected__secondary-text text-dark-grey-2">
+              contact@flex.co
+            </p>
+          </div>
+          <div class="landing-page__staying-connected__medium">
+            <img
+              alt="Phone Icon"
+              src="/icons/phone-icon.png"
+              class="landing-page__staying-connected__icon"
+            />
+            <h1
+              class="landing-page__staying-connected__primary-text text-black mt-xs">
+              Phone
+            </h1>
+            <p
+              class="landing-page__staying-connected__secondary-text text-dark-grey-2">
+              +7-843-672-431
+            </p>
+          </div>
+          <div class="landing-page__staying-connected__medium">
+            <img
+              alt="Socials Icon"
+              src="/icons/socials-icon.png"
+              class="landing-page__staying-connected__icon"
+            />
+            <h1
+              class="landing-page__staying-connected__primary-text text-black mt-xs">
+              Socials
+            </h1>
+            <div
+              class="landing-page__staying-connected__social-icons text-dark-grey-2"
+            >
+              <img
+                alt="Facebook Icon"
+                src="/icons/Facebook.png"
+                class="landing-page__staying-connected__social-icon"
+              />
+              <img
+                alt="Twitter Icon"
+                src="/icons/Twitter.png"
+                class="landing-page__staying-connected__social-icon"
+              />
+              <img
+                alt="Instagram Icon"
+                src="/icons/Instagram.png"
+                class="landing-page__staying-connected__social-icon"
+              />
+              <img
+                alt="LinkedIn Icon"
+                src="/icons/LinkedIn.png"
+                class="landing-page__staying-connected__social-icon"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="landing-page__staying-connected__map-container text-center mt-md">
+          <picture>
+            <source
+              media="(max-width: 599px)"
+              srcset="images/map-mobile.webp"
+              type="image/webp"
+            >
+            <source
+              media="(max-width: 599px)"
+              srcset="images/map-mobile.png"
+              type="image/png"
+            >
+            <source
+              media="(min-width: 600px)"
+              srcset="images/map.webp"
+              type="image/webp"
+            >
+            <source
+              media="(min-width: 600px)"
+              srcset="images/map.png"
+              type="image/png"
+            >
+            <img
+              src="/images/map.png"
+              class="landing-page__staying-connected__map"
+              alt="Default Map Logo"
+            />
+          </picture>
+        </div>
+      </section>
+  <!-- End of Staying Connected Section -->
 
     </div>
   </div>
@@ -584,6 +725,7 @@ export default {
   }
   &__what-we-do {
     position: relative;
+    z-index: 2;
     @include mobile-only {
       padding: $mobile-section-padding;
     }
@@ -619,6 +761,7 @@ export default {
   }
   &__what-we-do-II {
     position: relative;
+    z-index: 2;
     @include mobile-only {
       padding: $mobile-section-padding;
     }
@@ -676,6 +819,7 @@ export default {
   }
    &__what-we-do-III {
     position: relative;
+    z-index: 2;
     @include mobile-only {
       padding: $mobile-section-padding;
     }
@@ -715,6 +859,46 @@ export default {
     }
     &__radial-pattern {
       @include radial-pattern;
+    }
+  }
+  &__staying-connected {
+    z-index: 2;
+    position: relative;
+    background-color: $primary-white;
+    @include mobile-only {
+      padding: $mobile-section-padding;
+    }
+    &__radial-pattern {
+      @include radial-pattern;
+    }
+    &__titles {
+      @include mobile-only {
+        width: $mobile-width-percentage;
+      }
+    }
+    &__map {
+      width: 100%;
+    }
+    &__radial-pattern {
+      @include radial-pattern;
+    }
+    &__social-media {
+      @include flex-justify-between;
+    }
+    &__medium {
+      max-width: 31%;
+      flex: 1 1 100%;
+    }
+    &__icon {
+      width: 3rem;
+      height: auto;
+    }
+    &__social-icons {
+      @include flex-justify-between
+    }
+    &__social-icon {
+      width: 1.5rem;
+      height: auto;
     }
   }
 }
