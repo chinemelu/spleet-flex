@@ -136,7 +136,7 @@
         <div class="landing-page__introduction-section__clients">
           <p class="text-light-grey-2 mt-md mb-sm">Join 4,000+ companies already growing</p>
           <img
-            src="/patterns/radial-pattern.png"
+            src="/patterns/radial-pattern-grey.png"
             class="landing-page__introduction-section__radial-pattern"
             alt="Radial Pattern"
           />
@@ -169,17 +169,110 @@
           </div>
         </div>
       </section>
+
+      <section class="landing-page__what-we-do mt-lg text-center">
+        <img
+          src="/patterns/radial-pattern-white.png"
+          class="landing-page__what-we-do__radial-pattern"
+          alt="Radial Pattern"
+        />
+        <div>
+          <span
+            class="landing-page__what-we-do__heading d-inline-block
+            text-upper bg-color-primary-light text-color-primary
+            br-md pl-sm pr-sm pt-sm pb-sm mb-sm">
+            features
+          </span>
+          <div class="landing-page__what-we-do__titles margin-center">
+            <h1>Gain more insight into how people use your</h1>
+            <p class="text-dark-grey-2 mt-sm">With our integrated CRM, project management,
+              collaboration and invoicing capabilities,
+              you can manage every aspect of your business in one secure platform.</p>
+          </div>
+        </div>
+
+        <div class="landing-page__what-we-do__items mt-lg">
+          <WhatWeDo
+            class="landing-page__what-we-do__item"
+            v-for="(val, index) in whatWeDoItems"
+            :key="index"
+            :val="val"
+          />
+        </div>
+
+        <div class="landing-page__get-started-box bg-dark-1 mt-lg">
+          <div>
+            <h1 class="text-white">The fastest way from idea to live site. Period.</h1>
+            <p class="text-light-grey-3 mt-sm">Flex is a Small SaaS Business.
+              Flex isn’t a traditional company.</p>
+          </div>
+          <div class="landing-page__get-started-box__btns" >
+            <BaseButton
+              type="submit"
+              class="landing-page__get-started-box__btn text-white bg-primary-color br-sm">
+              Get Started
+            </BaseButton>
+            <BaseButton
+              type="submit"
+              class="landing-page__get-started-box__btn br-sm text-dark-grey-3">
+              Learn More
+            </BaseButton>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 </template>
 
 <script>
 import { ref } from 'vue';
+import WhatWeDo from '@/components/WhatWeDo.vue';
 
 export default {
+  components: {
+    WhatWeDo,
+  },
   setup() {
     const workEmail = ref('');
-    return { workEmail };
+    const whatWeDoItems = [
+      {
+        alt: 'Measure performance',
+        imgSrc: '/icons/email-icon.png',
+        primaryText: 'Measure your performance',
+        secondaryText: 'Stay connected with your team and make quick decisions wherever you are.',
+      },
+      {
+        alt: 'Custom analytics',
+        imgSrc: '/icons/custom-analytics-icon.png',
+        primaryText: 'Custom analytics',
+        secondaryText: 'Get a complete sales dashboard in the cloud. See activity, revenue and social metrics all in one place.',
+      },
+      {
+        alt: 'Team Management',
+        imgSrc: '/icons/team-management-icon.png',
+        primaryText: 'Team Management',
+        secondaryText: 'Our calendar lets you know what is happening with customer and projects so you',
+      },
+      {
+        alt: 'Build your website',
+        imgSrc: '/icons/build-website-icon.png',
+        primaryText: 'Build your website',
+        secondaryText: 'A tool that lets you build a dream website even if you know nothing about web design or programming.',
+      },
+      {
+        alt: 'Connect multiple apps',
+        imgSrc: '/icons/connect-apps-icon.png',
+        primaryText: 'Connect multiple apps',
+        secondaryText: 'The first business platform to bring together all of your products from one place.',
+      },
+      {
+        alt: 'Easy setup',
+        imgSrc: '/icons/easy-setup-icon.png',
+        primaryText: 'Easy setup',
+        secondaryText: 'End to End Business Platform, Sales Management, Marketing Automation, Help Desk',
+      },
+    ];
+    return { workEmail, whatWeDoItems };
   },
 };
 </script>
@@ -191,8 +284,7 @@ export default {
   }
   &__mobile-navbar {
     padding: 1.5rem 2rem;
-    display: flex;
-    justify-content: space-between;
+    @include flex-between;
     align-items: center;
     box-shadow: $box-shadow-mobile-navbar;
   }
@@ -263,19 +355,12 @@ export default {
       }
     }
     &__radial-pattern {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 100%;
-      transform: translate(-50%, -50%);
-      height: 100%;
-      z-index: -1;
+      @include radial-pattern;
     }
     &__companies {
       @include mobile-only {
-        display: grid;
+        @include grid-justify-content;
         grid-template-columns: repeat(auto-fill, 30%);
-        justify-content: space-between;
       }
     }
     &__company-logo {
@@ -288,7 +373,7 @@ export default {
   }
   &__introduction-text-container {
     &--outer {
-      background: $bg-dark;
+      background: $primary-black;
       position: relative;
     }
     &--inner {
@@ -330,8 +415,7 @@ export default {
       }
     }
     &__btn-input-section {
-      display: flex;
-      justify-content: space-between;
+      @include flex-between;
       height: 100%;
     }
     &__btn {
@@ -355,6 +439,43 @@ export default {
       color: $dark-grey-1;
       border: none;
       border-radius: $border-radius-sm;
+    }
+  }
+  &__what-we-do {
+    position: relative;
+    @include mobile-only {
+      padding: $mobile-section-padding;
+    }
+    &__titles {
+      @include mobile-only {
+        width: 70%;
+      }
+    }
+    &__radial-pattern {
+      @include radial-pattern;
+    }
+    &__items {
+      @include mobile-only {
+        @include grid-justify-content;
+        grid-template-columns: repeat(auto-fill, 45%);
+      }
+    }
+    &__item {
+      margin-bottom: 2.5rem;
+    }
+  }
+  &__get-started-box {
+    padding: 1.5rem 2rem;
+    @include flex-between;
+    align-items: center;
+    &__btns {
+    }
+    &__btn {
+      @include mobile-only {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        font-size: $font-size-small
+      }
     }
   }
 }
