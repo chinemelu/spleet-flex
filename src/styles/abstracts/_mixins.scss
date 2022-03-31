@@ -16,10 +16,11 @@
 
 @mixin radial-pattern {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
-  transform: translate(-50%, -50%);
   height: 100%;
   z-index: -1;
 }
@@ -29,7 +30,17 @@
   justify-content: space-between;
 }
 
-@mixin flex-between {
+@mixin flex-justify-between {
   display: flex;
   justify-content: space-between;
+}
+
+@mixin flex-justify-center {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flex-align-center {
+  display: flex;
+  align-items: flex-end;
 }

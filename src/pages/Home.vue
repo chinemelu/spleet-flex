@@ -70,8 +70,8 @@
         </li>
       </ul>
 
-        <!-- FIRST SECTION -->
-      <section class="landing-page__introduction-section text-center">
+        <!-- Start of First Section -->
+      <section class="landing-page__introduction-section bg-grey text-center">
         <div class="landing-page__introduction-text-container--outer br-sm pt-lg pb-lg">
           <div class="landing-page__introduction-text-container--inner margin-center">
 
@@ -133,6 +133,8 @@
         </div>
 
         <!-- End of Black Background Introduction Section -->
+
+        <!-- Start of area showing clients and their logos -->
         <div class="landing-page__introduction-section__clients">
           <p class="text-light-grey-2 mt-md mb-sm">Join 4,000+ companies already growing</p>
           <img
@@ -168,7 +170,11 @@
 
           </div>
         </div>
+        <!-- End of area showing clients -->
       </section>
+      <!-- End of First Section -->
+
+      <!--  Start of What we Do Section  -->
 
       <section class="landing-page__what-we-do mt-lg text-center">
         <img
@@ -191,16 +197,17 @@
           </div>
         </div>
 
-        <div class="landing-page__what-we-do__items mt-lg">
+        <div class="landing-page__what-we-do__items mt-md">
           <WhatWeDo
-            class="landing-page__what-we-do__item"
+            class="landing-page__what-we-do__item mb-md"
             v-for="(val, index) in whatWeDoItems"
             :key="index"
             :val="val"
           />
         </div>
 
-        <div class="landing-page__get-started-box bg-dark-1 mt-lg">
+<!-- Beginning of Gettting Started Black Background Box -->
+        <div class="landing-page__get-started-box bg-dark-1 mt-sm">
           <div>
             <h1 class="text-white">The fastest way from idea to live site. Period.</h1>
             <p class="text-light-grey-3 mt-sm">Flex is a Small SaaS Business.
@@ -219,7 +226,121 @@
             </BaseButton>
           </div>
         </div>
+      <!-- End of Getting Started Black Background Box -->
+
       </section>
+<!-- End of First Part of What We do -->
+
+<!-- Beginning of Second Part of What We do -->
+      <section class="mt-lg landing-page__what-we-do-II bg-grey">
+        <img
+            src="/patterns/radial-pattern-white.png"
+            class="landing-page__what-we-do-II__radial-pattern"
+            alt="Radial Pattern"
+          />
+        <div class="text-center landing-page__what-we-do-II__features-text-container">
+          <span
+            class="landing-page__what-we-do__heading d-inline-block
+            text-upper bg-color-primary-light text-color-primary
+            br-md pl-sm pr-sm pt-sm pb-sm mb-sm">
+            features
+          </span>
+        </div>
+        <div class="landing-page__what-we-do-II__titles margin-center text-center">
+          <h1>Gain more insight into how people use your</h1>
+          <p class="text-dark-grey-2 mt-sm">With our integrated CRM, project management,
+            collaboration and invoicing capabilities,
+            you can manage every aspect of your business in one secure platform.</p>
+        </div>
+
+        <div class="landing-page__what-we-do-II__container--outer">
+          <div class="landing-page__what-we-do-II__container--inner mt-md text-center">
+            <WhatWeDo
+              class="landing-page__what-we-do-II__item margin-center"
+              v-for="(val, index) in whatWeDoItemsII"
+              :key="index"
+              :val="val"
+            />
+          </div>
+          <div class="landing-page__what-we-do-II__image-container text-center mt-lg">
+            <img
+              src="/images/laptop-img.png"
+              alt="Laptop image for second part of what we do"
+              class="landing-page__what-we-do-II__image"
+            />
+            <img
+              src="/patterns/blue-dot-pattern.png"
+              alt="Blue dot pattern for what we do section"
+              class="landing-page__what-we-do-II__pattern bottom-right"
+            />
+            <img
+              src="/patterns/orange-fp-pattern.png"
+              alt="Full orange fingerprint lik pattern for what we do section"
+              class="landing-page__what-we-do-II__pattern top-left"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- End of Second Part of What We do -->
+
+<!-- Beginning of Third Part of What We do -->
+      <section class="landing-page__what-we-do-III bg-grey">
+        <img
+            src="/patterns/radial-pattern-white.png"
+            class="landing-page__what-we-do-III__radial-pattern"
+            alt="Radial Pattern"
+          />
+        <div class="text-center landing-page__what-we-do-III__features-text-container">
+          <span
+            class="landing-page__what-we-do__heading d-inline-block
+            text-upper bg-color-primary-light text-color-primary
+            br-md pl-sm pr-sm pt-sm pb-sm mb-sm">
+            features
+          </span>
+        </div>
+        <div class="landing-page__what-we-do-III__titles margin-center text-center">
+          <h1>Gain more insight into how people use your</h1>
+          <p class="text-dark-grey-2 mt-sm">With our integrated CRM, project management,
+            collaboration and invoicing capabilities,
+            you can manage every aspect of your business in one secure platform.</p>
+          <BaseButton
+            type="submit"
+            class="landing-page__what-we-do-III__btn text-white
+            bg-primary-color br-sm pt-md pl-md pr-md pb-md ml-sm mt-sm">
+            Get Started
+          </BaseButton>
+        </div>
+
+        <div class="landing-page__what-we-do-III__container--outer">
+          <div class="landing-page__what-we-do-III__container--inner mt-md text-center">
+            <WhatWeDo
+              class="landing-page__what-we-do-III__item margin-center"
+              v-for="(val, index) in whatWeDoItemsII"
+              :key="index"
+              :val="val"
+            />
+          </div>
+          <div class="landing-page__what-we-do-III__image-container text-center mt-lg">
+            <img
+              src="/images/laptop-img.png"
+              alt="Laptop image for second part of what we do"
+              class="landing-page__what-we-do-III__image"
+            />
+            <img
+              src="/patterns/blue-dot-pattern.png"
+              alt="Blue dot pattern for what we do section"
+              class="landing-page__what-we-do-III__pattern bottom-right"
+            />
+            <img
+              src="/patterns/orange-fp-pattern.png"
+              alt="Full orange fingerprint lik pattern for what we do section"
+              class="landing-page__what-we-do-III__pattern top-left"
+            />
+          </div>
+        </div>
+      </section>
+  <!-- End of Third Part of What We do -->
+
     </div>
   </div>
 </template>
@@ -272,7 +393,28 @@ export default {
         secondaryText: 'End to End Business Platform, Sales Management, Marketing Automation, Help Desk',
       },
     ];
-    return { workEmail, whatWeDoItems };
+
+    const whatWeDoItemsII = [
+      {
+        alt: 'Measure performance',
+        imgSrc: '/icons/email-icon.png',
+        primaryText: 'Measure your performance',
+        secondaryText: 'Stay connected with your team and make quick decisions wherever you are.',
+      },
+      {
+        alt: 'Build your website',
+        imgSrc: '/icons/build-website-icon.png',
+        primaryText: 'Build your website',
+        secondaryText: 'A tool that lets you build a dream website even if you know nothing about web design or programming.',
+      },
+      {
+        alt: 'Connect multiple apps',
+        imgSrc: '/icons/connect-apps-icon.png',
+        primaryText: 'Connect multiple apps',
+        secondaryText: 'The first business platform to bring together all of your products from one place.',
+      },
+    ];
+    return { workEmail, whatWeDoItems, whatWeDoItemsII };
   },
 };
 </script>
@@ -284,7 +426,7 @@ export default {
   }
   &__mobile-navbar {
     padding: 1.5rem 2rem;
-    @include flex-between;
+    @include flex-justify-between;
     align-items: center;
     box-shadow: $box-shadow-mobile-navbar;
   }
@@ -335,7 +477,6 @@ export default {
   }
   &__introduction-section {
     @include mobile-only {
-      background: $bg-grey;
       padding: $mobile-section-padding;
     }
     &__clients {
@@ -378,7 +519,7 @@ export default {
     }
     &--inner {
       padding: 1.5rem 1rem;
-      width: 75%;
+      width: $mobile-width-percentage;
       text-align: center;
     }
     &__heading {
@@ -415,7 +556,7 @@ export default {
       }
     }
     &__btn-input-section {
-      @include flex-between;
+      @include flex-justify-between;
       height: 100%;
     }
     &__btn {
@@ -448,7 +589,7 @@ export default {
     }
     &__titles {
       @include mobile-only {
-        width: 70%;
+        width: $mobile-width-percentage;
       }
     }
     &__radial-pattern {
@@ -460,15 +601,13 @@ export default {
         grid-template-columns: repeat(auto-fill, 45%);
       }
     }
-    &__item {
-      margin-bottom: 2.5rem;
-    }
   }
   &__get-started-box {
-    padding: 1.5rem 2rem;
-    @include flex-between;
+    padding: 1.5rem 1rem;
+    @include flex-justify-between;
     align-items: center;
     &__btns {
+      text-align: right;
     }
     &__btn {
       @include mobile-only {
@@ -476,6 +615,106 @@ export default {
         padding: 1rem;
         font-size: $font-size-small
       }
+    }
+  }
+  &__what-we-do-II {
+    position: relative;
+    @include mobile-only {
+      padding: $mobile-section-padding;
+    }
+    &__titles {
+      @include mobile-only {
+        width: $mobile-width-percentage;
+      }
+    }
+    &__item {
+      @include mobile-only {
+        margin-top: 3rem;
+        width: $mobile-width-percentage;
+      }
+    }
+    &__container {
+      &--outer {
+        @include mobile-only {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      &--inner {
+        @include mobile-only {
+          flex-direction: column;
+        }
+      }
+    }
+    &__image {
+      @include mobile-only {
+        width: 80%;
+        height: auto;
+      }
+    }
+    &__image-container {
+      position: relative;
+    }
+    &__pattern {
+      @include mobile-only {
+        width: 7rem;
+      }
+      height: auto;
+      position: absolute;
+      &.top-left {
+        top: -2rem;
+        left: 1rem;
+      }
+      &.bottom-right {
+        bottom: -2rem;
+        right: 1.5rem;
+      }
+    }
+    &__radial-pattern {
+      @include radial-pattern;
+    }
+  }
+   &__what-we-do-III {
+    position: relative;
+    @include mobile-only {
+      padding: $mobile-section-padding;
+    }
+    &__titles {
+      @include mobile-only {
+        width: $mobile-width-percentage;
+      }
+    }
+    &__item {
+      @include mobile-only {
+        margin-top: 3rem;
+        width: $mobile-width-percentage;
+      }
+    }
+    &__btn {
+      font-size: $font-size-small
+    }
+    &__container {
+      &--outer {
+        @include mobile-only {
+          display: none;
+        }
+      }
+    }
+    &__image {
+      @include mobile-only {
+        display: none;
+      }
+    }
+    &__image-container {
+      position: relative;
+    }
+    &__pattern {
+      @include mobile-only {
+        display: none;
+      }
+    }
+    &__radial-pattern {
+      @include radial-pattern;
     }
   }
 }
