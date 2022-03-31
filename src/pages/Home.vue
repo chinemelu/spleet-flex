@@ -143,11 +143,21 @@
           text-light-grey-2 mt-md mb-sm">
             Join 4,000+ companies already growing
           </p>
-          <img
-            src="/patterns/radial-pattern-grey.png"
-            class="landing-page__introduction-section__radial-pattern"
-            alt="Radial Pattern"
-          />
+           <picture>
+            <source
+              srcset="/patterns/radial-pattern-grey.webp"
+              type="image/webp"
+            >
+            <source
+              srcset="/patterns/radial-pattern-grey.png"
+              type="image/png"
+            >
+            <img
+              src="/patterns/radial-pattern-grey.png"
+              class="landing-page__introduction-section__radial-pattern"
+              alt="Radial Pattern"
+            />
+           </picture>
           <div class="landing-page__introduction-section__companies">
             <img src="/logos/jiggle-logo.png"
               class="landing-page__introduction-section__company-logo"
@@ -183,11 +193,21 @@
       <!--  Start of What we Do Section  -->
 
       <section class="landing-page__what-we-do mt-lg text-center">
-        <img
-          src="/patterns/radial-pattern-white.png"
-          class="landing-page__what-we-do__radial-pattern"
-          alt="Radial Pattern"
-        />
+        <picture>
+          <source
+            srcset="/patterns/radial-pattern-white.webp"
+            type="image/webp"
+          >
+          <source
+            srcset="/patterns/radial-pattern-white.png"
+            type="image/png"
+          >
+          <img
+            src="/patterns/radial-pattern-white.png"
+            class="landing-page__what-we-do__radial-pattern"
+            alt="Radial Pattern"
+          />
+        </picture>
         <div>
           <span
             class="landing-page__what-we-do__heading d-inline-block
@@ -243,11 +263,21 @@
 
 <!-- Beginning of Second Part of What We do -->
       <section class="mt-lg landing-page__what-we-do-II bg-grey">
-        <img
+        <picture>
+          <source
+            srcset="/patterns/radial-pattern-grey.webp"
+            type="image/webp"
+          >
+          <source
+            srcset="/patterns/radial-pattern-grey.png"
+            type="image/png"
+          >
+          <img
             src="/patterns/radial-pattern-grey.png"
             class="landing-page__what-we-do-II__radial-pattern"
             alt="Radial Pattern"
           />
+        </picture>
         <div class="text-center landing-page__what-we-do-II__features-text-container">
           <span
             class="landing-page__what-we-do__heading d-inline-block
@@ -321,11 +351,15 @@
 
 <!-- Beginning of Third Part of What We do -->
       <section class="landing-page__what-we-do-III bg-grey">
-        <img
+        <picture>
+          <source srcset="/patterns/radial-pattern-grey.webp">
+          <source srcset="/patterns/radial-pattern-grey.png">
+          <img
             src="/patterns/radial-pattern-grey.png"
             class="landing-page__what-we-do-III__radial-pattern"
             alt="Radial Pattern"
           />
+        </picture>
         <div class="text-center landing-page__what-we-do-III__features-text-container">
           <span
             class="landing-page__what-we-do__heading d-inline-block
@@ -383,11 +417,15 @@
 
 <!-- Beginning of Staying Connected Section -->
       <section class="mt-lg landing-page__staying-connected bg-white">
-        <img
+         <picture>
+          <source srcset="/patterns/radial-pattern-white.webp">
+          <source srcset="/patterns/radial-pattern-white.png">
+          <img
             src="/patterns/radial-pattern-white.png"
             class="landing-page__staying-connected__radial-pattern"
             alt="Radial Pattern"
           />
+        </picture>
         <div class="text-center landing-page__staying-connected__features-text-container">
           <span
             class="landing-page__what-we-do__heading d-inline-block
@@ -505,6 +543,53 @@
       </section>
   <!-- End of Staying Connected Section -->
 
+  <!-- Beginning of Footer -->
+      <footer class="landing-page__footer bg-dark-1 text-light-grey-3">
+        <div class="landing-page__footer__container--inner">
+          <img
+            src="/logos/flex-white-text-logo.png"
+            alt="Flex mobile logo"
+            class="landing-page__footer__logo"
+          />
+  <!-- Radial pattern for footer -->
+          <picture>
+            <source srcset="/patterns/radial-pattern-dark.webp">
+            <source srcset="/patterns/radial-pattern-dark.png">
+            <img
+              src="/patterns/radial-pattern-dark.png"
+              class="landing-page__footer__radial-pattern"
+              alt="Radial Pattern"
+            />
+          </picture>
+
+    <!-- Menu items for footer -->
+          <ul class="landing-page__footer__menu-items mt-md">
+            <li class="landing-page__footer__menu-item">
+              Product
+            </li>
+            <li class="landing-page__footer__menu-item">
+              Features
+            </li>
+            <li class="landing-page__footer__menu-item">
+            Pricing
+            </li>
+            <li class="landing-page__footer__menu-item">
+              Resources
+            </li>
+            <li class="landing-page__footer__menu-item">
+              Careers
+            </li>
+            <li class="landing-page__footer__menu-item">
+              Help
+            </li>
+            <li class="landing-page__footer__menu-item">
+              Privacy
+            </li>
+          </ul>
+        </div>
+
+        <p class="landing-page__footer__copyright-text mt-md">© 2021 Flex. All rights reserved.</p>
+      </footer>
     </div>
   </div>
 </template>
@@ -985,6 +1070,34 @@ export default {
     &__social-icon {
       width: 1.5rem;
       height: auto;
+    }
+  }
+  &__footer {
+    position: relative;
+    border-top: 6px solid $color-primary;
+    font-size: $font-size-regular;
+    z-index: 2;
+    padding: 2.5rem 0;
+    &__menu-items {
+      list-style: none;
+    }
+    &__menu-item {
+      margin-bottom: 2rem;
+      &:first-child {
+        margin-top: 3rem;
+      }
+    }
+    &__radial-pattern {
+      @include radial-pattern;
+    }
+    &__copyright-text {
+      padding: $mobile-footer-padding;
+    }
+    &__container {
+      &--inner {
+        padding: $mobile-footer-padding;
+        border-bottom: 1px solid $dark-grey-3;
+      }
     }
   }
 }
