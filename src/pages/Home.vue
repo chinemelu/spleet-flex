@@ -72,6 +72,12 @@
 
         <!-- Start of First Section -->
       <section class="landing-page__introduction-section bg-grey text-center">
+         <img
+          src="/images/BG-Wave.png"
+          alt="Mail Icon"
+          class="landing-page__introduction-section__background-wave"
+        />
+
         <div class="landing-page__introduction-text-container--outer br-sm pt-lg pb-lg">
           <div class="landing-page__introduction-text-container--inner margin-center">
 
@@ -107,7 +113,8 @@
               platform that lets you run your business on one platform, seamlessly across
               all digital channels.</p>
               <!-- Button && Input Section -->
-              <form class="landing-page__introduction-text-container__btn-input-section mt-sm">
+              <form class="landing-page__introduction-text-container__btn-input-section
+                margin-center mt-sm">
                   <div
                     class="landing-page__introduction-text-container__input-container
                     br-sm"
@@ -145,7 +152,7 @@
           text-light-grey-2 mt-md mb-sm">
             Join 4,000+ companies already growing
           </p>
-           <picture>
+           <!-- <picture>
             <source
               srcset="/patterns/radial-pattern-grey.webp"
               type="image/webp"
@@ -159,7 +166,7 @@
               class="landing-page__introduction-section__radial-pattern"
               alt="Radial Pattern"
             />
-           </picture>
+           </picture> -->
           <div class="landing-page__introduction-section__companies">
             <img src="/logos/jiggle-logo.png"
               class="landing-page__introduction-section__company-logo"
@@ -235,10 +242,9 @@
             :val="val"
           />
         </div>
-
 <!-- Beginning of Gettting Started Black Background Box -->
         <div class="landing-page__get-started-box bg-dark-1 mt-sm">
-          <div>
+          <div class="landing-page__get-started-box__headings">
             <h1 class="landing-page__get-started-box__primary-heading--main
             text-white">The fastest way from idea to live site. Period.</h1>
             <p class="landing-page__get-started-box__primary-heading--sub
@@ -264,7 +270,7 @@
 <!-- End of First Part of What We do -->
 
 <!-- Beginning of Second Part of What We do -->
-      <section class="mt-lg landing-page__what-we-do-II bg-grey">
+      <section class="landing-page__what-we-do-II bg-grey">
         <picture>
           <source
             srcset="/patterns/radial-pattern-grey.webp"
@@ -370,31 +376,22 @@
             features
           </span>
         </div>
-        <div class="landing-page__what-we-do-III__titles margin-center text-center">
-          <h1 class="landing-page__what-we-do-III__primary-heading--main">
-            Gain more insight into how people use your
-          </h1>
-          <p class="landing-page__what-we-do-III__primary-heading--sub text-dark-grey-2 mt-sm">
-            With our integrated CRM, project management,
-            collaboration and invoicing capabilities,
-            you can manage every aspect of your business in one secure platform.
-          </p>
-          <BaseButton
-            type="submit"
-            class="landing-page__what-we-do-III__btn text-white
-            bg-primary-color br-sm pt-md pl-md pr-md pb-md mt-sm">
-            Get Started
-          </BaseButton>
-        </div>
-
         <div class="landing-page__what-we-do-III__container--outer">
-          <div class="landing-page__what-we-do-III__container--inner mt-md text-center">
-            <WhatWeDo
-              class="landing-page__what-we-do-III__item margin-center"
-              v-for="(val, index) in whatWeDoItemsII"
-              :key="index"
-              :val="val"
-            />
+          <div class="landing-page__what-we-do-III__titles margin-center text-center">
+            <h1 class="landing-page__what-we-do-III__primary-heading--main">
+              Gain more insight into how people use your
+            </h1>
+            <p class="landing-page__what-we-do-III__primary-heading--sub text-dark-grey-2 mt-sm">
+              With our integrated CRM, project management,
+              collaboration and invoicing capabilities,
+              you can manage every aspect of your business in one secure platform.
+            </p>
+            <BaseButton
+              type="submit"
+              class="landing-page__what-we-do-III__btn text-white
+              bg-primary-color br-sm pt-md pl-md pr-md pb-md mt-sm">
+              Get Started
+            </BaseButton>
           </div>
           <div class="landing-page__what-we-do-III__image-container text-center mt-lg">
             <img
@@ -725,43 +722,60 @@ export default {
     }
   }
   &__introduction-section {
+    position: relative;
     padding: $mobile-section-padding;
     @include tablet-landscape-up {
       padding: $landscape-plus-padding;
     }
+    @include desktop-up {
+      padding: $desktop-plus-padding;
+    }
     &__primary-heading {
       font-size: $font-size-medium;
+      @include tablet-landscape-up {
+        font-size: $desktop-plus-font-size-medium;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+      }
+      @include desktop-up {
+        font-size: $big-desktop-plus-font-size-medium
+      }
+    }
+    &__background-wave {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      right: 0;
+      bottom: -2rem;
+      @include tablet-landscape-up {
+        bottom: -5rem;
+        left: -15rem;
+      }
     }
     &__clients {
       position: relative;
       z-index: 2;
-      &::after {
-        content: '';
-        background: url('/images/BG-Wave.png');
-        position: absolute;
-        background-size: cover;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 3rem;
-        @include mobile-only {
-          left: -2rem; // must match the padding of the section
-        }
-      }
     }
     &__radial-pattern {
       @include radial-pattern;
     }
     &__companies {
-      @include mobile-only {
-        @include grid-justify-content;
-        grid-template-columns: repeat(auto-fill, 30%);
+      @include grid-justify-content;
+      grid-template-columns: repeat(auto-fill, 30%);
+      @include tablet-landscape-up {
+        @include flex-justify-between;
       }
     }
     &__company-logo {
-      @include mobile-only {
-        width: 100%;
-        height: auto;
-        margin-bottom: 2rem;
+      width: 100%;
+      height: auto;
+      margin-bottom: 2rem;
+      @include tablet-landscape-up {
+        max-width: 18%;
+        margin-bottom: 5rem;
+      }
+      @include big-desktop-up {
+        max-width: 18rem;
       }
     }
   }
@@ -770,13 +784,36 @@ export default {
     &__primary-heading {
       &--main {
         font-size: $font-size-regular;
+        @include tablet-landscape-up {
+          font-size: $desktop-plus-font-size-heading
+        }
+        @include desktop-up {
+          font-size: $big-desktop-plus-font-size-heading
+        }
       }
       &--sub {
         font-size: $font-size-medium;
+        @include tablet-landscape-up {
+          margin-bottom: 3rem;
+          font-size: $desktop-plus-font-size-small
+        }
+        @include desktop-up {
+          font-size: $desktop-plus-font-size-small
+        }
+        @include big-desktop-up {
+          font-size: $big-desktop-plus-font-size-small
+        }
       }
     }
     &__secondary-heading {
       font-size: $font-size-small;
+      @include tablet-landscape-up {
+        margin-bottom: 5rem;
+        font-size: $desktop-plus-font-size-small
+      }
+      @include desktop-up {
+        font-size: $desktop-plus-font-size-small
+      }
     }
     &--outer {
       background: $primary-black;
@@ -786,15 +823,31 @@ export default {
       padding: 1.5rem 1rem;
       width: $mobile-width-percentage;
       text-align: center;
+      @include tablet-landscape-up {
+        width: $desktop-plus-width-percentage
+      }
+      @include big-desktop-up {
+        width: $big-desktop-plus-width-percentage
+      }
     }
     &__heading {
       font-size: $font-size-small;
+      @include tablet-landscape-up {
+        margin-top: 5rem;
+      }
     }
     &__fp-pattern {
+      position: absolute;
       @include mobile-only {
         width: auto;
         height: 5rem;
-        position: absolute;
+      }
+      @include tablet-landscape-up {
+        width: 8rem;
+        height: auto;
+      }
+      @include desktop-up {
+        width: 15rem;
       }
       &.top-left {
         top: 0;
@@ -806,27 +859,64 @@ export default {
       }
     }
     &__dot-pattern {
+      position: absolute;
       @include mobile-only {
         width: 5rem;
         height: auto;
-        position: absolute;
+      }
+      @include tablet-landscape-up {
+        width: 8rem;
+        height: auto;
+      }
+      @include desktop-up {
+        width: 15rem;
       }
       &.top-right {
         top: 7px;
         right: 7px;
+        @include tablet-landscape-up {
+         top: 1rem;
+         right: 1rem;
+        }
+        @include desktop-up {
+         top: 2rem;
+         right: 2rem;
+        }
       }
       &.bottom-left {
         bottom: 7px;
         left: 7px;
+        @include tablet-landscape-up {
+         bottom: 1rem;
+         left: 1rem;
+        }
+        @include desktop-up {
+         bottom: 2rem;
+         left: 2rem;
+        }
       }
     }
     &__btn-input-section {
       @include flex-justify-between;
       height: 100%;
+      @include tablet-landscape-up {
+        width: 70%;
+      }
+      @include desktop-up {
+
+      }
     }
     &__btn {
       font-size: $font-size-small;
       align-self: flex-end;
+      @include tablet-landscape-up {
+        padding: 1rem 1.5rem;
+        font-size: $desktop-plus-font-size-small;
+        align-self: stretch;
+      }
+      @include desktop-up {
+        font-size: $desktop-plus-font-size-small
+      }
     }
     &__input-container {
       display: flex;
@@ -837,11 +927,23 @@ export default {
       &:focus-within {
         outline: 2px solid $color-primary;
       }
+      @include tablet-landscape-up {
+        border-radius: 6px;
+        width: 60%;
+      }
+      @include desktop-up {
+
+      }
     }
     &__input-mail-icon {
       width: 1rem;
       flex: 1;
       height: auto;
+      @include tablet-landscape-up {
+        width: 2rem;
+        flex: 0;
+        height: auto;
+      }
     }
     &__input {
       padding: 0 1rem;
@@ -854,37 +956,73 @@ export default {
       &:focus {
         outline: none;
       }
+      @include tablet-landscape-up {
+        padding: 2rem;
+      }
     }
   }
   &__what-we-do {
     position: relative;
-    z-index: 2;
-    @include mobile-only {
-      padding: $mobile-section-padding;
+    z-index: 3;
+      padding: 1.5rem 2rem 5rem;
+    @include tablet-landscape-up {
+      padding: 1.5rem $landscape-left-right-padding 20rem;
+    }
+    @include desktop-up {
+      padding: 1.5rem $desktop-plus-left-right-padding 20rem;
     }
     &__heading {
       font-size: $font-size-small;
+      @include tablet-landscape-up {
+        margin-top: 5rem;
+      }
     }
     &__primary-heading {
       &--main {
         font-size: $font-size-regular;
+        @include tablet-landscape-up {
+          font-size: $desktop-plus-font-size-regular
+        }
+        @include desktop-up {
+          font-size: $big-desktop-plus-font-size-regular
+        }
       }
       &--sub {
         font-size: $font-size-medium;
+        @include tablet-landscape-up {
+          font-size: $desktop-plus-font-size-medium
+        }
+        @include desktop-up {
+          font-size: $big-desktop-plus-font-size-medium;
+        }
       }
     }
     &__titles {
-      @include mobile-only {
-        width: $mobile-width-percentage;
+      width: $mobile-width-percentage;
+      @include tablet-landscape-up {
+        width: 69%;
+      }
+      @include desktop-up {
+        width: 55%;
       }
     }
     &__radial-pattern {
       @include radial-pattern;
     }
     &__items {
+      @include grid-justify-content;
       @include mobile-only {
-        @include grid-justify-content;
         grid-template-columns: repeat(auto-fill, 45%);
+      }
+      @include tablet-landscape-up {
+        margin-top: 8rem;
+        font-size: $desktop-plus-font-size-medium;
+        grid-template-columns: repeat(auto-fill, 26%);
+      }
+    }
+    &__item {
+      @include tablet-landscape-up {
+        margin-bottom: 6rem;
       }
     }
   }
@@ -892,22 +1030,76 @@ export default {
     padding: 1.5rem 1rem;
     @include flex-justify-between;
     align-items: center;
+    @include tablet-landscape-up {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 50%);
+      width: calc(100% - 30rem);
+      padding: 6rem;
+      text-align: left;
+      font-size: $desktop-plus-font-size-small
+    }
+    @include desktop-up {
+      font-size: $big-desktop-plus-font-size-small;
+    }
     &__primary-heading {
       &--main {
-        font-size: $font-size-regular
+        font-size: $font-size-regular;
+        @include tablet-landscape-up {
+          font-size: $desktop-plus-font-size-regular
+        }
+        @include desktop-up {
+          font-size: $big-desktop-plus-font-size-regular;
+        }
       }
       &--sub {
         font-size: $font-size-small;
+        @include tablet-landscape-up {
+          font-size: $desktop-plus-font-size-small
+        }
+        @include desktop-up {
+          font-size: $big-desktop-plus-font-size-small;
+        }
+      }
+    }
+    &__headings {
+      @include tablet-landscape-up {
+        flex: 0 1 50%
+      }
+      @include desktop-up {
+        // flex: 0 1 40%
+        flex: 0 1 45%;
       }
     }
     &__btns {
       text-align: right;
+      &:first-child {
+        @include tablet-landscape-up {
+          margin-right: 5rem;
+        }
+      }
+      @include tablet-landscape-up {
+        flex: 0 1 45%;
+        @include flex-justify-between;
+      }
+      @include desktop-up {
+        flex: 0 1 30%;
+        @include flex-justify-between;
+      }
     }
     &__btn {
       @include mobile-only {
         margin-bottom: 1rem;
         padding: 1rem;
-        font-size: $font-size-small
+        font-size: $font-size-small;
+      }
+      @include tablet-landscape-up {
+        padding: 1.5rem 2rem;
+        font-size: $desktop-plus-font-size-medium
+      }
+      @include desktop-up {
+        font-size: $big-desktop-plus-font-size-medium;
       }
     }
   }
@@ -917,17 +1109,54 @@ export default {
     @include mobile-only {
       padding: $mobile-section-padding;
     }
+    @include tablet-landscape-up {
+      padding: $landscape-left-right-padding
+    }
+    @include desktop-up {
+      padding: $desktop-plus-left-right-padding
+    }
+    @include desktop-up {
+      font-size: $big-desktop-plus-font-size-medium;
+    }
+    &__features-text-container {
+      @include tablet-landscape-up {
+        text-align: left
+      }
+    }
     &__primary-heading {
       &--main {
-        font-size: $font-size-regular
+        font-size: $font-size-regular;
+        @include tablet-landscape-up {
+          font-size: $desktop-plus-font-size-medium;
+        }
+        @include tablet-landscape-up {
+          font-size: $desktop-plus-font-size-regular;
+        }
+        @include big-desktop-up {
+          font-size: $big-desktop-plus-font-size-regular
+        }
       }
       &--sub {
         font-size: $font-size-medium;
+        @include tablet-landscape-up {
+          font-size: $desktop-plus-font-size-medium
+        }
+        @include desktop-up {
+          font-size: $desktop-plus-font-size-regular
+        }
+        @include big-desktop-up {
+          font-size: $big-desktop-plus-font-size-medium;
+        }
       }
     }
     &__titles {
       @include mobile-only {
         width: $mobile-width-percentage;
+      }
+      @include tablet-landscape-up {
+        width: 75%;
+        text-align: left;
+        margin-left: 0;
       }
     }
     &__item {
@@ -935,17 +1164,30 @@ export default {
         margin-top: 3rem;
         width: $mobile-width-percentage;
       }
+      @include tablet-landscape-up {
+        margin-top: 5rem;
+        margin-bottom: 3rem;
+      }
     }
     &__container {
       &--outer {
+        display: flex;
         @include mobile-only {
-          display: flex;
           flex-direction: column;
+        }
+        @include tablet-landscape-up {
+          justify-content: space-between;
         }
       }
       &--inner {
         @include mobile-only {
           flex-direction: column;
+        }
+        @include tablet-landscape-up {
+          flex: 0 1 30%
+        }
+        @include big-desktop-up {
+          flex: 0 1 40%
         }
       }
     }
@@ -954,9 +1196,22 @@ export default {
         width: 80%;
         height: auto;
       }
+      @include tablet-landscape-up {
+        width: 50rem;
+        height: 100%;
+      }
+      @include big-desktop-up {
+        width: 65rem;
+      }
     }
     &__image-container {
       position: relative;
+      @include tablet-landscape-up {
+        flex: 0 1 30%;
+      }
+      @include desktop-up {
+        flex: 0 1 50%
+      }
     }
     &__pattern {
       @include mobile-only {
@@ -1007,8 +1262,12 @@ export default {
     }
     &__container {
       &--outer {
-        @include mobile-only {
-          display: none;
+         @include tablet-landscape-up {
+          display: flex;
+          flex-direction: row-reverse
+        }
+        @include desktop-up {
+          flex: 0 1 50%
         }
       }
     }
@@ -1019,6 +1278,9 @@ export default {
     }
     &__image-container {
       position: relative;
+      @include mobile-only {
+        display: none;
+      }
     }
     &__pattern {
       @include mobile-only {

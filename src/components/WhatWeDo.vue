@@ -42,18 +42,34 @@ export default {
 <style lang="scss" scoped>
 .what-we-do {
   &__icon {
-    @include mobile-only {
-      width: 4rem;
-      height: auto;
+    width: 4rem;
+    height: auto;
+    @include tablet-landscape-up {
+      font-size: $desktop-plus-font-size-medium
+    }
+    @include desktop-up {
+      font-size: $big-desktop-plus-font-size-medium;
     }
   }
   &__primary-text {
     @include mobile-only {
       font-size: $font-size-regular;
+      @include tablet-landscape-up {
+        font-size: $desktop-plus-font-size-medium
+      }
+      @include desktop-up {
+        font-size: $big-desktop-plus-font-size-medium;
+      }
     }
   }
   &__secondary-text {
     font-size: $font-size-small;
+    @include tablet-landscape-up {
+      font-size: $desktop-plus-font-size-small
+    }
+    @include desktop-up {
+      font-size: $big-desktop-plus-font-size-small;
+    }
   }
 }
 </style>

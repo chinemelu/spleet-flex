@@ -18,15 +18,34 @@ $dark-grey-3: #333F51;
 
 $primary-black: #2A3342;
 
-$font-size-regular: 1.6rem;
-$font-size-medium: 1.4rem;
-$font-size-small: 1.2rem;
-
 $border-radius-sm: 8rem;
 
 $mobile-section-padding: 1.5rem 2rem;
 $mobile-footer-padding: 0 3rem;
 
-$landscape-plus-padding: 5rem 15rem;
+
+$desktop-plus-padding: 5rem 15rem;
+$desktop-plus-left-right-padding: 15rem;
+
+$landscape-plus-padding: 5rem 10rem;
+$landscape-left-right-padding: 10rem;
+
+$font-size-regular: 1.6rem;
+$font-size-medium: 1.4rem;
+$font-size-small: 1.2rem;
+
+$desktop-plus-font-size-heading: 4rem;
+$desktop-plus-font-size-regular: 2.4rem;
+$desktop-plus-font-size-medium: 1.6rem;
+$desktop-plus-font-size-small: 1.5rem;
+
+$big-desktop-plus-font-size-heading: 6rem;
+$big-desktop-plus-font-size-regular: 3.6rem;
+$big-desktop-plus-font-size-medium: 2.4rem;
+$big-desktop-plus-font-size-small: 2rem;
+
 
 $mobile-width-percentage: 85%;
+$desktop-plus-width-percentage: 75%;
+$big-desktop-plus-width-percentage: 47%;
+
