@@ -108,19 +108,21 @@
               all digital channels.</p>
               <!-- Button && Input Section -->
               <form class="landing-page__introduction-text-container__btn-input-section mt-sm">
-                <div
-                  class="landing-page__introduction-text-container__input-container
-                  br-sm">
-                  <img
-                    src="/icons/input-mail-icon.png"
-                    alt="Mail Icon"
-                    class="landing-page__introduction-text-container__input-mail-icon ml-sm"
-                  />
-                  <BaseInput
-                    class="landing-page__introduction-text-container__input"
-                    v-model="workEmail" placeholder="Enter your work email"
-                  />
-                </div>
+                  <div
+                    class="landing-page__introduction-text-container__input-container
+                    br-sm"
+                  >
+                    <img
+                      src="/icons/input-mail-icon.png"
+                      alt="Mail Icon"
+                      class="landing-page__introduction-text-container__input-mail-icon ml-sm"
+                    />
+                    <BaseInput
+                      class="landing-page__introduction-text-container__input"
+                      v-model="workEmail" placeholder="Enter your work email"
+                    />
+                  </div>
+
                 <BaseButton
                   type="submit"
                   class="landing-page__introduction-text-container__btn text-white
@@ -670,9 +672,7 @@ export default {
 
 <style lang="scss" scoped>
 .landing-page {
-  @include mobile-only {
-    position: relative;
-  }
+  position: relative;
   &__mobile-navbar {
     padding: 1.5rem 2rem;
     @include flex-justify-between;
@@ -725,8 +725,9 @@ export default {
     }
   }
   &__introduction-section {
-    @include mobile-only {
-      padding: $mobile-section-padding;
+    padding: $mobile-section-padding;
+    @include tablet-landscape-up {
+      padding: $landscape-plus-padding;
     }
     &__primary-heading {
       font-size: $font-size-medium;
@@ -765,6 +766,7 @@ export default {
     }
   }
   &__introduction-text-container {
+    position: relative;
     &__primary-heading {
       &--main {
         font-size: $font-size-regular;
@@ -827,22 +829,31 @@ export default {
       align-self: flex-end;
     }
     &__input-container {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       background: $primary-white;
-      width: 70%;
+      width: 80%;
       border-radius: $border-radius-sm;
+      &:focus-within {
+        outline: 2px solid $color-primary;
+      }
     }
     &__input-mail-icon {
-      width: 1.5rem;
+      width: 1rem;
+      flex: 1;
       height: auto;
     }
     &__input {
       padding: 0 1rem;
       font-size: $font-size-small;
       color: $dark-grey-1;
+      flex: 1 1 100%;
+      max-width: 80%;
       border: none;
       border-radius: $border-radius-sm;
+      &:focus {
+        outline: none;
+      }
     }
   }
   &__what-we-do {
