@@ -1,15 +1,40 @@
 <template>
   <div class="landing-page">
     <!-- Mobile Navbar -->
-    <nav class="landing-page__mobile-navbar">
+    <nav class="landing-page__navbar">
       <label for="sidebar-toggle" class="landing-page__sidebar-toggle-label">
         <img src="/icons/menu-line(black).png" alt="hamburger menu for mobile navbar" />
       </label>
       <img
         src="/logos/flex-black-text-logo.png"
         alt="Flex mobile logo"
-        class="landing-page__flex-mobile-navbar-logo"
+        class="landing-page__flex-navbar-logo"
       />
+
+       <!-- Desktop nav menu  -->
+      <ul class="landing-page__desktop-nav-menu text-dark-grey-2">
+        <li class="landing-page__desktop-nav-menu__menu-item">
+          <span class="landing-page__desktop-nav-menu__menu-item-text">Product</span>
+        </li>
+        <li class="landing-page__desktop-nav-menu__menu-item">
+          <span class="landing-page__desktop-nav-menu__menu-item-text">Features</span>
+        </li>
+        <li class="landing-page__desktop-nav-menu__menu-item">
+          Pricing
+        </li>
+        <li class="landing-page__desktop-nav-menu__menu-item">
+          <span class="landing-page__desktop-nav-menu__menu-item-text">Resources</span>
+        </li>
+      </ul>
+
+      <div class="landing-page__desktop-nav-menu__login-signup-container">
+        <router-link class="landing-page__desktop-nav-menu__login-text" to="#">Login</router-link>
+        <BaseButton
+          class="landing-page__introduction-text-container__btn text-white
+          bg-primary-color br-sm pt-sm pl-sm pr-sm pb-sm ml-sm">
+          Sign up
+        </BaseButton>
+      </div>
     </nav>
     <div class="landing-page__inner-container">
 
@@ -69,6 +94,7 @@
           <span class="landing-page__mobile-sidebar__menu-item-text">Pricing</span>
         </li>
       </ul>
+      <!-- End of mobile sidebar -->
 
         <!-- Start of First Section -->
       <section class="landing-page__introduction-section bg-grey text-center">
@@ -152,11 +178,7 @@
           text-light-grey-2 mt-md mb-sm">
             Join 4,000+ companies already growing
           </p>
-           <!-- <picture>
-            <source
-              srcset="/patterns/radial-pattern-grey.webp"
-              type="image/webp"
-            >
+           <picture>
             <source
               srcset="/patterns/radial-pattern-grey.png"
               type="image/png"
@@ -166,7 +188,7 @@
               class="landing-page__introduction-section__radial-pattern"
               alt="Radial Pattern"
             />
-           </picture> -->
+           </picture>
           <div class="landing-page__introduction-section__companies">
             <img src="/logos/jiggle-logo.png"
               class="landing-page__introduction-section__company-logo"
@@ -203,10 +225,6 @@
 
       <section class="landing-page__what-we-do mt-lg text-center">
         <picture>
-          <source
-            srcset="/patterns/radial-pattern-white.webp"
-            type="image/webp"
-          >
           <source
             srcset="/patterns/radial-pattern-white.png"
             type="image/png"
@@ -273,10 +291,6 @@
       <section class="landing-page__what-we-do-II bg-grey">
         <picture>
           <source
-            srcset="/patterns/radial-pattern-grey.webp"
-            type="image/webp"
-          >
-          <source
             srcset="/patterns/radial-pattern-grey.png"
             type="image/png"
           >
@@ -306,8 +320,9 @@
         </div>
 
         <div class="landing-page__what-we-do-II__container--outer">
-          <div class="landing-page__what-we-do-II__container--inner mt-md text-center">
+          <div class="landing-page__what-we-do-II__container--inner text-center">
             <WhatWeDo
+              isFlexOrientation
               class="landing-page__what-we-do-II__item margin-center"
               v-for="(val, index) in whatWeDoItemsII"
               :key="index"
@@ -360,7 +375,6 @@
 <!-- Beginning of Third Part of What We do -->
       <section class="landing-page__what-we-do-III bg-grey">
         <picture>
-          <source srcset="/patterns/radial-pattern-grey.webp">
           <source srcset="/patterns/radial-pattern-grey.png">
           <img
             src="/patterns/radial-pattern-grey.png"
@@ -368,16 +382,14 @@
             alt="Radial Pattern"
           />
         </picture>
-        <div class="text-center landing-page__what-we-do-III__features-text-container">
-          <span
-            class="landing-page__what-we-do__heading d-inline-block
-            text-upper bg-color-primary-light text-color-primary
-            br-md pl-sm pr-sm pt-sm pb-sm mb-sm">
-            features
-          </span>
-        </div>
         <div class="landing-page__what-we-do-III__container--outer">
           <div class="landing-page__what-we-do-III__titles margin-center text-center">
+            <span
+              class="landing-page__what-we-do__heading landing-page__what-we-do-III__heading
+              d-inline-block text-upper bg-color-primary-light text-color-primary
+              br-md pl-sm pr-sm pt-sm pb-sm mb-sm">
+              features
+            </span>
             <h1 class="landing-page__what-we-do-III__primary-heading--main">
               Gain more insight into how people use your
             </h1>
@@ -415,9 +427,8 @@
   <!-- End of Third Part of What We do -->
 
 <!-- Beginning of Staying Connected Section -->
-      <section class="mt-lg landing-page__staying-connected bg-white">
+      <section class="landing-page__staying-connected bg-white">
          <picture>
-          <source srcset="/patterns/radial-pattern-white.webp">
           <source srcset="/patterns/radial-pattern-white.png">
           <img
             src="/patterns/radial-pattern-white.png"
@@ -435,7 +446,7 @@
         </div>
         <div class="landing-page__staying-connected__titles margin-center text-center">
           <h1 class="landing-page__staying-connected__primary-heading--main text-black">
-            Let’s stay connected
+            Let's stay connected
           </h1>
           <p class="landing-page__staying-connected__primary-heading--sub
             text-dark-grey-2 mt-sm">
@@ -552,7 +563,6 @@
           />
   <!-- Radial pattern for footer -->
           <picture>
-            <source srcset="/patterns/radial-pattern-dark.webp">
             <source srcset="/patterns/radial-pattern-dark.png">
             <img
               src="/patterns/radial-pattern-dark.png"
@@ -670,19 +680,48 @@ export default {
 <style lang="scss" scoped>
 .landing-page {
   position: relative;
-  &__mobile-navbar {
+  &__navbar {
     padding: 1.5rem 2rem;
     @include flex-justify-between;
     align-items: center;
     box-shadow: $box-shadow-mobile-navbar;
+    @include tablet-landscape-up {
+      padding: 1.5rem 5rem;
+      box-shadow: none;
+      background-color: $bg-grey
+    }
   }
-  &__flex-mobile-navbar-logo {
+  &__flex-navbar-logo {
     width: 8rem;
     height: auto;
     align-self: center;
   }
+  &__desktop-nav-menu {
+    display: none;
+    @include tablet-landscape-up {
+      list-style: none;
+      flex: 0 1 40%;
+      @include flex-justify-between;
+      font-size: $desktop-plus-font-size-medium;
+    }
+    &__login-signup-container {
+      display: none;
+      @include tablet-landscape-up {
+        display: flex;
+        align-items: center;
+        font-size: $desktop-plus-font-size-medium;
+      }
+    }
+    &__login-text {
+      text-decoration: none;
+      color: $dark-grey-2;
+    }
+  }
   &__sidebar-toggle-label {
     display: flex;
+    @include tablet-landscape-up {
+      display: none;
+    }
   }
   &__sidebar-toggle {
     visibility: hidden;
@@ -931,9 +970,6 @@ export default {
         border-radius: 6px;
         width: 60%;
       }
-      @include desktop-up {
-
-      }
     }
     &__input-mail-icon {
       width: 1rem;
@@ -958,13 +994,14 @@ export default {
       }
       @include tablet-landscape-up {
         padding: 2rem;
+        font-size: $desktop-plus-font-size-medium;
       }
     }
   }
   &__what-we-do {
     position: relative;
     z-index: 3;
-      padding: 1.5rem 2rem 5rem;
+    padding: $mobile-top-bottom-padding $mobile-left-right-padding $mobile-spacing-padding;
     @include tablet-landscape-up {
       padding: 1.5rem $landscape-left-right-padding 20rem;
     }
@@ -978,24 +1015,8 @@ export default {
       }
     }
     &__primary-heading {
-      &--main {
-        font-size: $font-size-regular;
-        @include tablet-landscape-up {
-          font-size: $desktop-plus-font-size-regular
-        }
-        @include desktop-up {
-          font-size: $big-desktop-plus-font-size-regular
-        }
-      }
-      &--sub {
-        font-size: $font-size-medium;
-        @include tablet-landscape-up {
-          font-size: $desktop-plus-font-size-medium
-        }
-        @include desktop-up {
-          font-size: $big-desktop-plus-font-size-medium;
-        }
-      }
+      @include what-we-do-primary-heading-main;
+      @include what-we-do-primary-heading-sub;
     }
     &__titles {
       width: $mobile-width-percentage;
@@ -1016,7 +1037,6 @@ export default {
       }
       @include tablet-landscape-up {
         margin-top: 8rem;
-        font-size: $desktop-plus-font-size-medium;
         grid-template-columns: repeat(auto-fill, 26%);
       }
     }
@@ -1035,13 +1055,14 @@ export default {
       left: 50%;
       bottom: 0;
       transform: translate(-50%, 50%);
-      width: calc(100% - 30rem);
+      width: calc(100% - 20rem); // 10rem padding * 2
       padding: 6rem;
       text-align: left;
       font-size: $desktop-plus-font-size-small
     }
     @include desktop-up {
       font-size: $big-desktop-plus-font-size-small;
+      width: calc(100% - 30rem); // 15rem padding * 2
     }
     &__primary-heading {
       &--main {
@@ -1068,7 +1089,6 @@ export default {
         flex: 0 1 50%
       }
       @include desktop-up {
-        // flex: 0 1 40%
         flex: 0 1 45%;
       }
     }
@@ -1080,12 +1100,14 @@ export default {
         }
       }
       @include tablet-landscape-up {
-        flex: 0 1 45%;
+        flex: 0 1 40%;
         @include flex-justify-between;
       }
       @include desktop-up {
         flex: 0 1 30%;
-        @include flex-justify-between;
+      }
+      @include big-desktop-up {
+        flex: 0 1 25%;
       }
     }
     &__btn {
@@ -1098,9 +1120,6 @@ export default {
         padding: 1.5rem 2rem;
         font-size: $desktop-plus-font-size-medium
       }
-      @include desktop-up {
-        font-size: $big-desktop-plus-font-size-medium;
-      }
     }
   }
   &__what-we-do-II {
@@ -1110,13 +1129,10 @@ export default {
       padding: $mobile-section-padding;
     }
     @include tablet-landscape-up {
-      padding: $landscape-left-right-padding
+      padding: 20rem $landscape-left-right-padding $landscape-top-bottom-padding;
     }
     @include desktop-up {
-      padding: $desktop-plus-left-right-padding
-    }
-    @include desktop-up {
-      font-size: $big-desktop-plus-font-size-medium;
+      padding: 20rem $desktop-plus-left-right-padding
     }
     &__features-text-container {
       @include tablet-landscape-up {
@@ -1124,30 +1140,8 @@ export default {
       }
     }
     &__primary-heading {
-      &--main {
-        font-size: $font-size-regular;
-        @include tablet-landscape-up {
-          font-size: $desktop-plus-font-size-medium;
-        }
-        @include tablet-landscape-up {
-          font-size: $desktop-plus-font-size-regular;
-        }
-        @include big-desktop-up {
-          font-size: $big-desktop-plus-font-size-regular
-        }
-      }
-      &--sub {
-        font-size: $font-size-medium;
-        @include tablet-landscape-up {
-          font-size: $desktop-plus-font-size-medium
-        }
-        @include desktop-up {
-          font-size: $desktop-plus-font-size-regular
-        }
-        @include big-desktop-up {
-          font-size: $big-desktop-plus-font-size-medium;
-        }
-      }
+      @include what-we-do-primary-heading-main;
+      @include what-we-do-primary-heading-sub;
     }
     &__titles {
       @include mobile-only {
@@ -1165,8 +1159,12 @@ export default {
         width: $mobile-width-percentage;
       }
       @include tablet-landscape-up {
-        margin-top: 5rem;
-        margin-bottom: 3rem;
+        &:not(:first-child) {
+          margin-top: 5rem;
+        }
+        &:not(:last-child) {
+          margin-bottom: 3rem;
+        }
       }
     }
     &__container {
@@ -1177,6 +1175,8 @@ export default {
         }
         @include tablet-landscape-up {
           justify-content: space-between;
+          align-items: center;
+          margin-top: 5rem;
         }
       }
       &--inner {
@@ -1184,10 +1184,7 @@ export default {
           flex-direction: column;
         }
         @include tablet-landscape-up {
-          flex: 0 1 30%
-        }
-        @include big-desktop-up {
-          flex: 0 1 40%
+          flex: 0 1 40%;
         }
       }
     }
@@ -1197,36 +1194,18 @@ export default {
         height: auto;
       }
       @include tablet-landscape-up {
-        width: 50rem;
-        height: 100%;
-      }
-      @include big-desktop-up {
-        width: 65rem;
+        width: 100%;
       }
     }
     &__image-container {
       position: relative;
       @include tablet-landscape-up {
-        flex: 0 1 30%;
-      }
-      @include desktop-up {
-        flex: 0 1 50%
+        flex: 0 1 48%;
+        margin-top: 0;
       }
     }
     &__pattern {
-      @include mobile-only {
-        width: 7rem;
-      }
-      height: auto;
-      position: absolute;
-      &.top-left {
-        top: -2rem;
-        left: 1rem;
-      }
-      &.bottom-right {
-        bottom: -2rem;
-        right: 1.5rem;
-      }
+      @include laptop-img-pattern-placement;
     }
     &__radial-pattern {
       @include radial-pattern;
@@ -1234,21 +1213,30 @@ export default {
   }
    &__what-we-do-III {
     position: relative;
-    z-index: 2;
-    @include mobile-only {
-      padding: $mobile-section-padding;
+    z-index: 3;
+    padding: $mobile-top-bottom-padding $mobile-left-right-padding $mobile-spacing-padding;
+    @include tablet-landscape-up {
+      padding: 0 $landscape-left-right-padding $landscape-top-bottom-padding;
+    }
+    @include desktop-up {
+      padding: 0 $desktop-plus-left-right-padding $desktop-plus-top-bottom-padding;
+    }
+    &__heading {
+      @include tablet-landscape-up {
+        margin-top: 0;
+      }
     }
     &__primary-heading {
-      &--main {
-        font-size: $font-size-regular
-      }
-      &--sub {
-        font-size: $font-size-medium;
-      }
+      @include biggest-main-primary-heading;
+      @include what-we-do-primary-heading-sub;
     }
     &__titles {
-      @include mobile-only {
-        width: $mobile-width-percentage;
+      width: $mobile-width-percentage;
+      @include tablet-landscape-up {
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+        flex: 0 1 40%;
       }
     }
     &__item {
@@ -1258,16 +1246,27 @@ export default {
       }
     }
     &__btn {
-      font-size: $font-size-small
+      font-size: $font-size-small;
+      align-self: flex-end;
+      @include tablet-landscape-up {
+        padding: 1rem 1.5rem;
+        font-size: $desktop-plus-font-size-small;
+        align-self: stretch;
+      }
+      @include desktop-up {
+        font-size: $desktop-plus-font-size-small
+      }
     }
     &__container {
       &--outer {
-         @include tablet-landscape-up {
-          display: flex;
-          flex-direction: row-reverse
+        display: flex;
+        @include mobile-only {
+          flex-direction: column;
         }
-        @include desktop-up {
-          flex: 0 1 50%
+        @include tablet-landscape-up {
+          flex-direction: row-reverse;
+          justify-content: space-between;
+          align-items: center;
         }
       }
     }
@@ -1275,17 +1274,25 @@ export default {
       @include mobile-only {
         display: none;
       }
+      @include tablet-landscape-up {
+        width: 100%;
+      }
     }
     &__image-container {
       position: relative;
       @include mobile-only {
         display: none;
       }
+      @include tablet-landscape-up {
+        flex: 0 1 48%;
+        margin-top: 0;
+      }
     }
     &__pattern {
       @include mobile-only {
         display: none;
       }
+      @include laptop-img-pattern-placement;
     }
     &__radial-pattern {
       @include radial-pattern;
@@ -1295,22 +1302,36 @@ export default {
     z-index: 2;
     position: relative;
     background-color: $primary-white;
-    @include mobile-only {
-      padding: $mobile-section-padding;
+    padding: $mobile-spacing-padding $mobile-left-right-padding $mobile-top-bottom-padding;
+    @include tablet-landscape-up {
+      padding: 0 $landscape-left-right-padding $staying-connected-landscape-plus-bottom-padding;
+      width: 80%;
+      @include margin-center;
+    }
+    @include desktop-up {
+      padding: 0 $desktop-plus-left-right-padding $staying-connected-landscape-plus-bottom-padding;
     }
     &__primary-heading {
-      &--main {
-        font-size: $font-size-regular
-      }
-      &--sub {
-        font-size: $font-size-medium;
-      }
+      @include biggest-main-primary-heading;
+      @include what-we-do-primary-heading-sub
     }
     &__primary-text {
       font-size: $font-size-regular;
+      @include tablet-landscape-up {
+        font-size: 2rem;
+      }
+      @include big-desktop-up {
+        font-size: 3rem;
+      }
     }
     &__secondary-text {
       font-size: $font-size-small;
+      @include tablet-landscape-up {
+        font-size: 1.5rem;
+      }
+      @include big-desktop-up {
+        font-size: 2rem;
+      }
     }
     &__radial-pattern {
       @include radial-pattern;
@@ -1322,6 +1343,15 @@ export default {
     }
     &__map {
       width: 100%;
+      object-fit: cover;
+      @include tablet-landscape-up {
+        height: 60rem;
+        z-index: 3;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 50%);
+      }
     }
     &__radial-pattern {
       @include radial-pattern;
@@ -1332,32 +1362,61 @@ export default {
     &__medium {
       max-width: 31%;
       flex: 1 1 100%;
+      @include tablet-landscape-up {
+        max-width: 26%;
+      }
     }
     &__icon {
       width: 3rem;
       height: auto;
+      @include tablet-landscape-up {
+        width: 4rem;
+      }
+      @include big-desktop-up {
+        width: 5rem;
+      }
     }
     &__social-icons {
-      @include flex-justify-between
+      @include flex-justify-between;
+      @include tablet-landscape-up {
+        margin-top: 1rem;
+      }
     }
     &__social-icon {
       width: 1.5rem;
       height: auto;
+      @include tablet-landscape-up {
+        width: 2rem;
+      }
+      @include big-desktop-up {
+        width: 3rem;
+      }
     }
   }
   &__footer {
     position: relative;
     border-top: 6px solid $color-primary;
     font-size: $font-size-regular;
-    z-index: 2;
+    z-index: -1;
     padding: 2.5rem 0;
     &__menu-items {
       list-style: none;
+      @include tablet-landscape-up {
+        @include flex-justify-between;
+        width: 75%;
+        @include margin-center;
+      }
     }
     &__menu-item {
       margin-bottom: 2rem;
+      @include tablet-landscape-up {
+        margin-bottom: 0;
+      }
       &:first-child {
         margin-top: 3rem;
+        @include tablet-landscape-up {
+          margin-top: 0;
+        }
       }
     }
     &__radial-pattern {
@@ -1370,6 +1429,23 @@ export default {
       &--inner {
         padding: $mobile-footer-padding;
         border-bottom: 1px solid $dark-grey-3;
+        @include tablet-landscape-up {
+          padding: 40rem $landscape-left-right-padding 4rem;
+        }
+        @include desktop-up {
+          padding: 40rem $desktop-plus-left-right-padding 4rem;
+        }
+      }
+    }
+    &__logo {
+      @include tablet-landscape-up {
+        display: block;
+        @include margin-center;
+      }
+    }
+    &__copyright-text {
+      @include tablet-landscape-up {
+        text-align: center;
       }
     }
   }

@@ -30,6 +30,34 @@
   margin-right: auto;
 }
 
+@mixin laptop-img-pattern-placement {
+  width: 7rem;
+  @include mobile-only {
+    &.top-left {
+      top: -2rem;
+      left: 1rem;
+    }
+    &.bottom-right {
+      bottom: -2rem;
+      right: 1.5rem;
+    }
+  }
+  @include tablet-landscape-up {
+    width: 9rem;
+    &.top-left {
+      top: -2rem;
+      left: -2rem;
+    }
+    &.bottom-right {
+      bottom: -2rem;
+      right: -2rem;
+    }
+  }
+  height: auto;
+  position: absolute;
+  
+}
+
 @mixin grid-justify-content {
   display: grid;
   justify-content: space-between;
@@ -47,5 +75,47 @@
 
 @mixin flex-align-center {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+}
+
+@mixin what-we-do-primary-heading-main {
+  &--main {
+    font-size: $font-size-regular;
+    @include tablet-landscape-up {
+      font-size: $desktop-plus-font-size-regular
+    }
+    @include desktop-up {
+      font-size: $desktop-plus-font-size-regular
+    }
+    @include big-desktop-up {
+      font-size: $big-desktop-plus-font-size-regular
+    }
+  }
+}
+
+@mixin what-we-do-primary-heading-sub {
+  &--sub {
+    font-size: $font-size-medium;
+    @include tablet-landscape-up {
+      font-size: $desktop-plus-font-size-medium
+    }
+    @include big-desktop-up {
+      font-size: $big-desktop-plus-font-size-small;
+    }
+  }
+}
+
+@mixin biggest-main-primary-heading {
+  &--main {
+    font-size: $font-size-regular;
+    @include tablet-landscape-up {
+      font-size: $desktop-plus-font-size-regular
+    }
+    @include desktop-up {
+      font-size: $desktop-plus-font-size-large
+    }
+    @include big-desktop-up {
+      font-size: $big-desktop-plus-font-size-large
+    }
+  }
 }
