@@ -28,7 +28,11 @@
       </ul>
 
       <div class="landing-page__desktop-nav-menu__login-signup-container">
-        <router-link class="landing-page__desktop-nav-menu__login-text" to="#">Login</router-link>
+        <router-link
+          class="landing-page__desktop-nav-menu__login-text"
+          :to="{ name: 'app' }">
+          Login
+        </router-link>
         <BaseButton
           class="landing-page__introduction-text-container__btn text-white
           bg-primary-color br-sm pt-sm pl-sm pr-sm pb-sm ml-md">
