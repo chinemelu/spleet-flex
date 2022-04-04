@@ -1,5 +1,6 @@
 .text-white { color: $primary-white; }
 .d-flex { display: flex;}
+.d-flex-between { display: flex; justify-content: space-between;}
 .text-light-grey-2 { color: $light-grey-2; }
 .text-light-grey-3 { color: $light-grey-3; }
 .text-color-primary-light { color: $color-primary-light; }
@@ -8,6 +9,7 @@
 .text-dark-grey-3 { color: $dark-grey-3; }
 .text-black { color: $primary-black; }
 .text-center { text-align: center; }
+.text-bold { font-weight: 700; }
 .mb-sm { margin-bottom: 1.5rem; }
 .mb-md { margin-bottom: 3rem;  }
 .mb-lg { margin-bottom: 8rem;  }
@@ -18,6 +20,10 @@
 .mt-lg { margin-top: 5rem; }
 .mt-xl { margin-top: 10rem; }
 .ml-sm { margin-left: 1.5rem; }
+.ml-md { margin-left: 3rem; }
+.mr-xs { margin-right: 5px; }
+.mr-sm { margin-right: 1.5rem; }
+.mr-md { margin-right: 3rem; }
 .margin-center { margin-left: auto; margin-right: auto;}
 .text-upper { text-transform: uppercase; }
 .bg-primary-color { background-color: $color-primary;}

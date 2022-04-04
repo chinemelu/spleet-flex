@@ -5,6 +5,10 @@ const routes = [
     path: '/',
     component: () => import('@/pages/Home.vue'),
   },
+  {
+    path: '/app',
+    component: () => import('@/pages/Index.vue'),
+  },
 ];
 
 // 3. Create the router instance and pass the `routes` option

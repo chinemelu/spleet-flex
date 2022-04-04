@@ -53,6 +53,12 @@ export default {
     }
     & .what-we-do__icon {
       width: 3rem;
+      @include tablet-landscape-up {
+        width: 4rem;
+      }
+      @include desktop-up {
+        width: 5rem;
+      }
     }
     & > .what-we-do__icon-primary-text-container > .what-we-do__primary-text {
       margin-left: 1rem;
@@ -67,6 +73,12 @@ export default {
     & > .what-we-do__secondary-text {
       margin-top: 1rem;
       margin-left: 4rem; // 3rem width of icon + 1rem margin left from primary-text
+      @include tablet-landscape-up {
+        margin-left: 5rem; // 4rem width of icon + 1rem margin left from primary-text
+      }
+      @include desktop-up {
+        margin-left: 6rem; // 5rem width of icon + 1rem margin left from primary-text
+      }
     }
   }
   &__icon {

@@ -43,14 +43,14 @@
     }
   }
   @include tablet-landscape-up {
-    width: 9rem;
+    width: 12rem;
     &.top-left {
       top: -2rem;
-      left: -2rem;
+      left: -4rem;
     }
     &.bottom-right {
       bottom: -2rem;
-      right: -2rem;
+      right: -4rem;
     }
   }
   height: auto;
@@ -70,12 +70,17 @@
 
 @mixin flex-justify-center {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 @mixin flex-align-center {
   display: flex;
   align-items: center;
+}
+
+
+@mixin opacity-transition {
+  transition: 250ms opacity ease-in;
 }
 
 @mixin what-we-do-primary-heading-main {

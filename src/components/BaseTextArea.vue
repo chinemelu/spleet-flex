@@ -1,15 +1,14 @@
 <template>
-  <input
-    :id="uniqueId"
-    v-bind="$attrs"
-    :value="modelValue"
-    @input="handleInput"
-  />
+  <div>
+    <textarea
+      v-bind="$attrs"
+      :value="modelValue"
+      @input="handleInput"
+    />
+  </div>
 </template>
 
 <script>
-import shortId from 'shortid';
-
 export default {
   inheritAttrs: false,
   props: {
@@ -18,24 +17,27 @@ export default {
     },
     label: {
       type: String,
-      default: '',
     },
   },
   setup(props, { emit }) {
-    const uniqueId = shortId.generate();
     const handleInput = (event) => {
       emit('update:modelValue', event.target.value);
     };
-    return { handleInput, uniqueId };
+    return { handleInput };
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.create-resource__input {
+.input-label {
+  display: block;
   font-size: $font-size-regular;
+}
+.create-resource__text-area {
+  min-width: 100%;
+  height: 10rem;
   padding: 1rem 1.5rem;
-  border-radius: $border-radius-sm;
   border: 1px solid $light-grey-1;
+  border-radius: $border-radius-sm
 }
 </style>

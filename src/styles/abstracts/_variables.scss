@@ -1,6 +1,7 @@
 $primary-white: #fff;
 
 $box-shadow-mobile-navbar: 0px 4px 7px rgba(146, 146, 146, 0.05);
+$box-shadow-card: 0px 4px 7px rgba(146, 146, 146, 0.35);
 $box-shadow-sidebar: 0px 5px 10px rgba(0, 0, 0, .1);
 
 $color-primary: #22C55E;
@@ -18,7 +19,7 @@ $dark-grey-3: #333F51;
 
 $primary-black: #2A3342;
 
-$border-radius-sm: 8rem;
+$border-radius-sm: 8px;
 
 $mobile-section-padding: 1.5rem 2rem;
 $mobile-left-right-padding: 2rem;
@@ -38,6 +39,9 @@ $landscape-left-right-padding: 10rem;
 $font-size-regular: 1.6rem;
 $font-size-medium: 1.4rem;
 $font-size-small: 1.2rem;
+
+$button-font-size-regular: 1.8rem;
+$button-font-size-medium: 1.6rem;
 
 $desktop-plus-font-size-heading: 4rem;
 $desktop-plus-font-size-large: 3.2rem;

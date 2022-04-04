@@ -20,7 +20,7 @@
           <span class="landing-page__desktop-nav-menu__menu-item-text">Features</span>
         </li>
         <li class="landing-page__desktop-nav-menu__menu-item">
-          Pricing
+          <span class="landing-page__desktop-nav-menu__menu-item-text">Pricing</span>
         </li>
         <li class="landing-page__desktop-nav-menu__menu-item">
           <span class="landing-page__desktop-nav-menu__menu-item-text">Resources</span>
@@ -31,7 +31,7 @@
         <router-link class="landing-page__desktop-nav-menu__login-text" to="#">Login</router-link>
         <BaseButton
           class="landing-page__introduction-text-container__btn text-white
-          bg-primary-color br-sm pt-sm pl-sm pr-sm pb-sm ml-sm">
+          bg-primary-color br-sm pt-sm pl-sm pr-sm pb-sm ml-md">
           Sign up
         </BaseButton>
       </div>
@@ -703,7 +703,13 @@ export default {
       flex: 0 1 40%;
       @include flex-justify-between;
       font-size: $desktop-plus-font-size-medium;
+      &  .landing-page__desktop-nav-menu__menu-item-text {
+        &:hover {
+          color: $color-primary;
+        }
+      }
     }
+
     &__login-signup-container {
       display: none;
       @include tablet-landscape-up {
@@ -715,6 +721,9 @@ export default {
     &__login-text {
       text-decoration: none;
       color: $dark-grey-2;
+      &:hover {
+        color: $color-primary
+      }
     }
   }
   &__sidebar-toggle-label {
@@ -810,7 +819,7 @@ export default {
       height: auto;
       margin-bottom: 2rem;
       @include tablet-landscape-up {
-        max-width: 18%;
+        max-width: 16%;
         margin-bottom: 5rem;
       }
       @include big-desktop-up {
@@ -950,11 +959,8 @@ export default {
       align-self: flex-end;
       @include tablet-landscape-up {
         padding: 1rem 1.5rem;
-        font-size: $desktop-plus-font-size-small;
+        font-size: $button-font-size-medium;
         align-self: stretch;
-      }
-      @include desktop-up {
-        font-size: $desktop-plus-font-size-small
       }
     }
     &__input-container {
@@ -1184,7 +1190,7 @@ export default {
           flex-direction: column;
         }
         @include tablet-landscape-up {
-          flex: 0 1 40%;
+          flex: 0 1 45%;
         }
       }
     }
@@ -1208,7 +1214,13 @@ export default {
       @include laptop-img-pattern-placement;
     }
     &__radial-pattern {
-      @include radial-pattern;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      z-index: -1;
     }
   }
    &__what-we-do-III {
@@ -1236,7 +1248,7 @@ export default {
         text-align: left;
         margin-left: 0;
         margin-right: 0;
-        flex: 0 1 40%;
+        flex: 0 1 45%;
       }
     }
     &__item {
