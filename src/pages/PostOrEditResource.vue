@@ -72,6 +72,11 @@ export default {
       textBody.value = detailsOfPostToBeEditedAsRefs.body.value;
     }
 
+    const clearFormFields = () => {
+      userId.value = '';
+      title.value = '';
+      textBody.value = '';
+    };
     const sendOrEditPost = async () => {
       const payload = {
         title: title.value,
@@ -79,14 +84,18 @@ export default {
         userId: userId.value,
       };
       try {
+        emit('changeShowLoaderStatus', true);
         if (props.isEditing) {
           await put({ url: `/posts/${userId.value}`, data: payload });
         } else {
           await post({ url: '/posts', data: payload });
         }
+        emit('changeShowLoaderStatus', false);
         emit('changeIsEditingStatus', false);
         alert(props.isEditing ? 'Post has been successfully edited' : 'Post has been successfully created');
+        clearFormFields();
       } catch (err) {
+        emit('changeShowLoaderStatus', false);
         alert(err);
       }
     };

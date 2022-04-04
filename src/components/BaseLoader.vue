@@ -21,7 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 .loader-overlay {
-  position: fixed;
+  position: absolute;
   background-color: rgba(0,0,0,.5);
   z-index: 20;
   top: 0;
