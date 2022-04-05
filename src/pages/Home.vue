@@ -806,6 +806,9 @@ export default {
     }
     &__primary-heading {
       font-size: $font-size-medium;
+      @include tablet-portrait-up {
+        font-size: $desktop-plus-font-size-medium;
+      }
       @include tablet-landscape-up {
         font-size: $desktop-plus-font-size-medium;
         margin-top: 5rem;
@@ -821,6 +824,9 @@ export default {
       left: 0;
       right: 0;
       bottom: -2rem;
+      @include tablet-portrait-up {
+        bottom: -5rem;
+      }
       @include tablet-landscape-up {
         bottom: -5rem;
         left: -15rem;
@@ -836,17 +842,24 @@ export default {
     &__companies {
       @include grid-justify-content;
       grid-template-columns: repeat(auto-fill, 30%);
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         @include flex-justify-between;
       }
+      // @include tablet-landscape-up {
+      //   @include flex-justify-between;
+      // }
     }
     &__company-logo {
       width: 100%;
       height: auto;
       margin-bottom: 2rem;
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         max-width: 16%;
         margin-bottom: 5rem;
+      }
+      @include tablet-landscape-up {
+        // max-width: 16%;
+        // margin-bottom: 5rem;
       }
       @include big-desktop-up {
         max-width: 18rem;
@@ -858,8 +871,11 @@ export default {
     &__primary-heading {
       &--main {
         font-size: $font-size-regular;
+        @include tablet-portrait-up {
+          font-size: $desktop-plus-font-size-heading;
+        }
         @include tablet-landscape-up {
-          font-size: $desktop-plus-font-size-heading
+          // font-size: $desktop-plus-font-size-heading
         }
         @include desktop-up {
           font-size: $big-desktop-plus-font-size-heading
@@ -867,9 +883,12 @@ export default {
       }
       &--sub {
         font-size: $font-size-medium;
+        @include tablet-portrait-up {
+          font-size: $desktop-plus-font-size-small;
+        }
         @include tablet-landscape-up {
           margin-bottom: 3rem;
-          font-size: $desktop-plus-font-size-small
+          // font-size: $desktop-plus-font-size-small
         }
         @include desktop-up {
           font-size: $desktop-plus-font-size-small
@@ -881,9 +900,12 @@ export default {
     }
     &__secondary-heading {
       font-size: $font-size-small;
+      @include tablet-portrait-up {
+        font-size: $desktop-plus-font-size-small
+      }
       @include tablet-landscape-up {
         margin-bottom: 5rem;
-        font-size: $desktop-plus-font-size-small
+        // font-size: $desktop-plus-font-size-small
       }
       @include desktop-up {
         font-size: $desktop-plus-font-size-small
@@ -897,9 +919,12 @@ export default {
       padding: 1.5rem 1rem;
       width: $mobile-width-percentage;
       text-align: center;
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         width: $desktop-plus-width-percentage
       }
+      // @include tablet-landscape-up {
+      //   width: $desktop-plus-width-percentage
+      // }
       @include big-desktop-up {
         width: $big-desktop-plus-width-percentage
       }
@@ -916,9 +941,13 @@ export default {
         width: auto;
         height: 5rem;
       }
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         width: 8rem;
         height: auto;
+      }
+      @include tablet-landscape-up {
+        // width: 8rem;
+        // height: auto;
       }
       @include desktop-up {
         width: 15rem;
@@ -938,10 +967,14 @@ export default {
         width: 5rem;
         height: auto;
       }
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         width: 8rem;
         height: auto;
       }
+      // @include tablet-landscape-up {
+      //   width: 8rem;
+      //   height: auto;
+      // }
       @include desktop-up {
         width: 15rem;
       }
@@ -973,21 +1006,26 @@ export default {
     &__btn-input-section {
       @include flex-justify-between;
       height: 100%;
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         width: 70%;
       }
-      @include desktop-up {
-
-      }
+      // @include tablet-landscape-up {
+      //   width: 70%;
+      // }
     }
     &__btn {
       font-size: $font-size-small;
       align-self: flex-end;
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         padding: 1rem 1.5rem;
         font-size: $button-font-size-medium;
         align-self: stretch;
       }
+      // @include tablet-landscape-up {
+      //   padding: 1rem 1.5rem;
+      //   font-size: $button-font-size-medium;
+      //   align-self: stretch;
+      // }
     }
     &__input-container {
       display: flex;
@@ -998,20 +1036,29 @@ export default {
       &:focus-within {
         outline: 2px solid $color-primary;
       }
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         border-radius: 6px;
         width: 60%;
       }
+      // @include tablet-landscape-up {
+      //   border-radius: 6px;
+      //   width: 60%;
+      // }
     }
     &__input-mail-icon {
       width: 1rem;
       flex: 1;
       height: auto;
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         width: 2rem;
         flex: 0;
         height: auto;
       }
+      // @include tablet-landscape-up {
+      //   width: 2rem;
+      //   flex: 0;
+      //   height: auto;
+      // }
     }
     &__input {
       padding: 0 1rem;
@@ -1024,9 +1071,13 @@ export default {
       &:focus {
         outline: none;
       }
+      @include tablet-portrait-up {
+        padding: 1.5rem;
+        font-size: $desktop-plus-font-size-medium;
+      }
       @include tablet-landscape-up {
         padding: 2rem;
-        font-size: $desktop-plus-font-size-medium;
+        // font-size: $desktop-plus-font-size-medium;
       }
     }
   }
@@ -1034,17 +1085,23 @@ export default {
     position: relative;
     z-index: 3;
     padding: $mobile-top-bottom-padding $mobile-left-right-padding $mobile-spacing-padding;
-    @include tablet-landscape-up {
+    @include tablet-portrait-up {
       padding: 1.5rem $landscape-left-right-padding 20rem;
     }
+    // @include tablet-landscape-up {
+    //   padding: 1.5rem $landscape-left-right-padding 20rem;
+    // }
     @include desktop-up {
       padding: 1.5rem $desktop-plus-left-right-padding 20rem;
     }
     &__heading {
       font-size: $font-size-small;
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         margin-top: 5rem;
       }
+      // @include tablet-landscape-up {
+      //   margin-top: 5rem;
+      // }
     }
     &__primary-heading {
       @include what-we-do-primary-heading-main;
@@ -1052,9 +1109,12 @@ export default {
     }
     &__titles {
       width: $mobile-width-percentage;
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         width: 69%;
       }
+      // @include tablet-landscape-up {
+      //   width: 69%;
+      // }
       @include desktop-up {
         width: 55%;
       }
@@ -1067,8 +1127,12 @@ export default {
       @include mobile-only {
         grid-template-columns: repeat(auto-fill, 45%);
       }
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         margin-top: 8rem;
+        grid-template-columns: repeat(auto-fill, 45%);
+      }
+      @include tablet-landscape-up {
+        // margin-top: 8rem;
         grid-template-columns: repeat(auto-fill, 26%);
       }
     }
@@ -1082,15 +1146,25 @@ export default {
     padding: 1.5rem 1rem;
     @include flex-justify-between;
     align-items: center;
-    @include tablet-landscape-up {
+    @include tablet-portrait-up {
       position: absolute;
       left: 50%;
       bottom: 0;
       transform: translate(-50%, 50%);
       width: calc(100% - 20rem); // 10rem padding * 2
-      padding: 6rem;
+      padding: 4rem;
       text-align: left;
       font-size: $desktop-plus-font-size-small
+    }
+    @include tablet-landscape-up {
+      // position: absolute;
+      // left: 50%;
+      // bottom: 0;
+      // transform: translate(-50%, 50%);
+      // width: calc(100% - 20rem); // 10rem padding * 2
+      padding: 6rem;
+      // text-align: left;
+      // font-size: $desktop-plus-font-size-small
     }
     @include desktop-up {
       font-size: $big-desktop-plus-font-size-small;
@@ -1099,24 +1173,33 @@ export default {
     &__primary-heading {
       &--main {
         font-size: $font-size-regular;
-        @include tablet-landscape-up {
+        @include tablet-portrait-up {
           font-size: $desktop-plus-font-size-regular
         }
+        // @include tablet-landscape-up {
+        //   font-size: $desktop-plus-font-size-regular
+        // }
         @include desktop-up {
           font-size: $big-desktop-plus-font-size-regular;
         }
       }
       &--sub {
         font-size: $font-size-small;
-        @include tablet-landscape-up {
+        @include tablet-portrait-up {
           font-size: $desktop-plus-font-size-small
         }
+        // @include tablet-landscape-up {
+        //   font-size: $desktop-plus-font-size-small
+        // }
         @include desktop-up {
           font-size: $big-desktop-plus-font-size-small;
         }
       }
     }
     &__headings {
+      @include tablet-portrait-up {
+        flex: 0 1 45%
+      }
       @include tablet-landscape-up {
         flex: 0 1 50%
       }
@@ -1127,9 +1210,16 @@ export default {
     &__btns {
       text-align: right;
       &:first-child {
-        @include tablet-landscape-up {
+        @include tablet-portrait-up {
           margin-right: 5rem;
         }
+        // @include tablet-landscape-up {
+        //   margin-right: 5rem;
+        // }
+      }
+      @include tablet-portrait-up {
+        flex: 0 1 50%;
+        @include flex-justify-between;
       }
       @include tablet-landscape-up {
         flex: 0 1 40%;
@@ -1148,9 +1238,13 @@ export default {
         padding: 1rem;
         font-size: $font-size-small;
       }
+      @include tablet-portrait-up {
+        padding: 1rem 1.5rem;
+        font-size: $desktop-plus-font-size-medium
+      }
       @include tablet-landscape-up {
         padding: 1.5rem 2rem;
-        font-size: $desktop-plus-font-size-medium
+        // font-size: $desktop-plus-font-size-medium
       }
     }
   }
@@ -1159,6 +1253,9 @@ export default {
     z-index: 2;
     @include mobile-only {
       padding: $mobile-section-padding;
+    }
+    @include tablet-portrait-up {
+      padding: 20rem $landscape-left-right-padding 5rem;
     }
     @include tablet-landscape-up {
       padding: 20rem $landscape-left-right-padding $landscape-top-bottom-padding;
@@ -1176,8 +1273,9 @@ export default {
       @include what-we-do-primary-heading-sub;
     }
     &__titles {
-      @include mobile-only {
-        width: $mobile-width-percentage;
+      width: $mobile-width-percentage;
+      @include tablet-portrait-up {
+        width: 100%;
       }
       @include tablet-landscape-up {
         width: 75%;
@@ -1186,11 +1284,12 @@ export default {
       }
     }
     &__item {
-      @include mobile-only {
-        margin-top: 3rem;
-        width: $mobile-width-percentage;
+      margin-top: 3rem;
+      width: $mobile-width-percentage;
+      @include tablet-portrait-up {
       }
       @include tablet-landscape-up {
+        margin-left: 0;
         &:not(:first-child) {
           margin-top: 5rem;
         }
@@ -1202,18 +1301,20 @@ export default {
     &__container {
       &--outer {
         display: flex;
-        @include mobile-only {
-          flex-direction: column;
+        flex-direction: column;
+        @include tablet-portrait-up {
+          margin-top: 5rem;
         }
         @include tablet-landscape-up {
+          flex-direction: row;
           justify-content: space-between;
           align-items: center;
-          margin-top: 5rem;
         }
       }
       &--inner {
-        @include mobile-only {
-          flex-direction: column;
+        flex-direction: column;
+        @include tablet-portrait-up {
+          margin-bottom: 5rem;
         }
         @include tablet-landscape-up {
           flex: 0 1 45%;
@@ -1221,9 +1322,10 @@ export default {
       }
     }
     &__image {
-      @include mobile-only {
-        width: 80%;
-        height: auto;
+      width: 80%;
+      height: auto;
+      @include tablet-portrait-up {
+        width: 100%;
       }
       @include tablet-landscape-up {
         width: 100%;
@@ -1231,6 +1333,10 @@ export default {
     }
     &__image-container {
       position: relative;
+      @include tablet-portrait-up {
+        width: 70%;
+        @include margin-center;
+      }
       @include tablet-landscape-up {
         flex: 0 1 48%;
         margin-top: 0;
@@ -1253,9 +1359,12 @@ export default {
     position: relative;
     z-index: 3;
     padding: $mobile-top-bottom-padding $mobile-left-right-padding $mobile-spacing-padding;
-    @include tablet-landscape-up {
+    @include tablet-portrait-up {
       padding: 0 $landscape-left-right-padding $landscape-top-bottom-padding;
     }
+    // @include tablet-landscape-up {
+    //   padding: 0 $landscape-left-right-padding $landscape-top-bottom-padding;
+    // }
     @include desktop-up {
       padding: 0 $desktop-plus-left-right-padding $desktop-plus-top-bottom-padding;
     }
@@ -1270,6 +1379,9 @@ export default {
     }
     &__titles {
       width: $mobile-width-percentage;
+      @include tablet-portrait-up {
+        width: 100%;
+      }
       @include tablet-landscape-up {
         text-align: left;
         margin-left: 0;
@@ -1286,11 +1398,16 @@ export default {
     &__btn {
       font-size: $font-size-small;
       align-self: flex-end;
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         padding: 1rem 1.5rem;
         font-size: $desktop-plus-font-size-small;
         align-self: stretch;
       }
+      // @include tablet-landscape-up {
+      //   padding: 1rem 1.5rem;
+      //   font-size: $desktop-plus-font-size-small;
+      //   align-self: stretch;
+      // }
       @include desktop-up {
         font-size: $desktop-plus-font-size-small
       }
@@ -1298,9 +1415,7 @@ export default {
     &__container {
       &--outer {
         display: flex;
-        @include mobile-only {
-          flex-direction: column;
-        }
+        flex-direction: column;
         @include tablet-landscape-up {
           flex-direction: row-reverse;
           justify-content: space-between;
@@ -1309,19 +1424,17 @@ export default {
       }
     }
     &__image {
-      @include mobile-only {
-        display: none;
-      }
+      display: none;
       @include tablet-landscape-up {
+        display: inline-block;
         width: 100%;
       }
     }
     &__image-container {
       position: relative;
-      @include mobile-only {
-        display: none;
-      }
+      display: none;
       @include tablet-landscape-up {
+        display: inline-block;
         flex: 0 1 48%;
         margin-top: 0;
       }
@@ -1341,10 +1454,15 @@ export default {
     position: relative;
     background-color: $primary-white;
     padding: $mobile-spacing-padding $mobile-left-right-padding $mobile-top-bottom-padding;
-    @include tablet-landscape-up {
+    @include tablet-portrait-up {
       padding: 0 $landscape-left-right-padding $staying-connected-landscape-plus-bottom-padding;
       width: 80%;
       @include margin-center;
+    }
+    @include tablet-landscape-up {
+      // padding: 0 $landscape-left-right-padding $staying-connected-landscape-plus-bottom-padding;
+      // width: 80%;
+      // @include margin-center;
     }
     @include desktop-up {
       padding: 0 $desktop-plus-left-right-padding $staying-connected-landscape-plus-bottom-padding;
@@ -1355,18 +1473,24 @@ export default {
     }
     &__primary-text {
       font-size: $font-size-regular;
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         font-size: 2rem;
       }
+      // @include tablet-landscape-up {
+      //   font-size: 2rem;
+      // }
       @include big-desktop-up {
         font-size: 3rem;
       }
     }
     &__secondary-text {
       font-size: $font-size-small;
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         font-size: 1.5rem;
       }
+      // @include tablet-landscape-up {
+      //   font-size: 1.5rem;
+      // }
       @include big-desktop-up {
         font-size: 2rem;
       }
@@ -1382,7 +1506,7 @@ export default {
     &__map {
       width: 100%;
       object-fit: cover;
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         height: 60rem;
         z-index: 3;
         position: absolute;
@@ -1390,6 +1514,14 @@ export default {
         bottom: 0;
         transform: translate(-50%, 50%);
       }
+      // @include tablet-landscape-up {
+      //   height: 60rem;
+      //   z-index: 3;
+      //   position: absolute;
+      //   left: 50%;
+      //   bottom: 0;
+      //   transform: translate(-50%, 50%);
+      // }
     }
     &__radial-pattern {
       @include radial-pattern;
@@ -1407,25 +1539,34 @@ export default {
     &__icon {
       width: 3rem;
       height: auto;
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         width: 4rem;
       }
+      // @include tablet-landscape-up {
+      //   width: 4rem;
+      // }
       @include big-desktop-up {
         width: 5rem;
       }
     }
     &__social-icons {
       @include flex-justify-between;
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         margin-top: 1rem;
       }
+      // @include tablet-landscape-up {
+      //   margin-top: 1rem;
+      // }
     }
     &__social-icon {
       width: 1.5rem;
       height: auto;
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         width: 2rem;
       }
+      // @include tablet-landscape-up {
+      //   width: 2rem;
+      // }
       @include big-desktop-up {
         width: 3rem;
       }
@@ -1439,10 +1580,15 @@ export default {
     padding: 2.5rem 0;
     &__menu-items {
       list-style: none;
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         @include flex-justify-between;
-        width: 75%;
+        width: 85%;
         @include margin-center;
+      }
+      @include tablet-landscape-up {
+        // @include flex-justify-between;
+        width: 75%;
+        // @include margin-center;
       }
     }
     &__menu-item {
@@ -1452,9 +1598,12 @@ export default {
       }
       &:first-child {
         margin-top: 3rem;
-        @include tablet-landscape-up {
+        @include tablet-portrait-up {
           margin-top: 0;
         }
+        // @include tablet-landscape-up {
+        //   margin-top: 0;
+        // }
       }
     }
     &__radial-pattern {
@@ -1467,24 +1616,34 @@ export default {
       &--inner {
         padding: $mobile-footer-padding;
         border-bottom: 1px solid $dark-grey-3;
-        @include tablet-landscape-up {
+        @include tablet-portrait-up {
           padding: 40rem $landscape-left-right-padding 4rem;
         }
+        // @include tablet-landscape-up {
+        //   padding: 40rem $landscape-left-right-padding 4rem;
+        // }
         @include desktop-up {
           padding: 40rem $desktop-plus-left-right-padding 4rem;
         }
       }
     }
     &__logo {
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         display: block;
         @include margin-center;
       }
+      // @include tablet-landscape-up {
+      //   display: block;
+      //   @include margin-center;
+      // }
     }
     &__copyright-text {
-      @include tablet-landscape-up {
+      @include tablet-portrait-up {
         text-align: center;
       }
+      // @include tablet-landscape-up {
+      //   text-align: center;
+      // }
     }
   }
 }

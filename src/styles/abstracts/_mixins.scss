@@ -42,8 +42,8 @@
       right: 1.5rem;
     }
   }
-  @include tablet-landscape-up {
-    width: 12rem;
+  @include tablet-portrait-up {
+    width: 8rem;
     &.top-left {
       top: -2rem;
       left: -4rem;
@@ -52,6 +52,20 @@
       bottom: -2rem;
       right: -4rem;
     }
+  }
+  @include tablet-landscape-up {
+    width: 10rem;
+    // &.top-left {
+    //   top: -2rem;
+    //   left: -4rem;
+    // }
+    // &.bottom-right {
+    //   bottom: -2rem;
+    //   right: -4rem;
+    // }
+  }
+  @include desktop-up {
+    width: 12rem;
   }
   height: auto;
   position: absolute; 
@@ -85,9 +99,12 @@
 @mixin what-we-do-primary-heading-main {
   &--main {
     font-size: $font-size-regular;
-    @include tablet-landscape-up {
+    @include tablet-portrait-up {
       font-size: $desktop-plus-font-size-regular
     }
+    // @include tablet-landscape-up {
+    //   font-size: $desktop-plus-font-size-regular
+    // }
     @include desktop-up {
       font-size: $desktop-plus-font-size-regular
     }
@@ -100,9 +117,12 @@
 @mixin what-we-do-primary-heading-sub {
   &--sub {
     font-size: $font-size-medium;
-    @include tablet-landscape-up {
+    @include tablet-portrait-up {
       font-size: $desktop-plus-font-size-medium
     }
+    // @include tablet-landscape-up {
+    //   font-size: $desktop-plus-font-size-medium
+    // }
     @include big-desktop-up {
       font-size: $big-desktop-plus-font-size-small;
     }
@@ -112,9 +132,12 @@
 @mixin biggest-main-primary-heading {
   &--main {
     font-size: $font-size-regular;
-    @include tablet-landscape-up {
+    @include tablet-portrait-up {
       font-size: $desktop-plus-font-size-regular
     }
+    // @include tablet-landscape-up {
+    //   font-size: $desktop-plus-font-size-regular
+    // }
     @include desktop-up {
       font-size: $desktop-plus-font-size-large
     }
