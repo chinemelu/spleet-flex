@@ -410,11 +410,33 @@
             </BaseButton>
           </div>
           <div class="landing-page__what-we-do-III__image-container text-center mt-lg">
-            <img
-              src="/images/laptop-img.png"
-              alt="Laptop image for second part of what we do"
-              class="landing-page__what-we-do-III__image"
-            />
+            <picture>
+              <source
+                media="(max-width: 599px)"
+                srcset="images/laptop-img-mobile.webp"
+                type="image/webp"
+              >
+              <source
+                media="(max-width: 599px)"
+                srcset="images/laptop-img-mobile.png"
+                type="image/png"
+              >
+              <source
+                media="(min-width: 600px)"
+                srcset="images/laptop-img.webp"
+                type="image/webp"
+              >
+              <source
+                media="(min-width: 600px)"
+                srcset="images/laptop-img.png"
+                type="image/png"
+              >
+              <img
+                src="/images/laptop-img.png"
+                alt="Laptop image for second part of what we do"
+                class="landing-page__what-we-do-III__image"
+              />
+            </picture>
             <img
               src="/patterns/blue-dot-pattern.png"
               alt="Blue dot pattern for what we do section"
