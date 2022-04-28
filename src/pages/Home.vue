@@ -642,7 +642,7 @@ export default {
     const whatWeDoItems = [
       {
         alt: 'Measure performance',
-        imgSrc: '/icons/email-icon.png',
+        imgSrc: '/icons/measure-performance-icon.png',
         primaryText: 'Measure your performance',
         secondaryText: 'Stay connected with your team and make quick decisions wherever you are.',
       },
@@ -681,7 +681,7 @@ export default {
     const whatWeDoItemsII = [
       {
         alt: 'Measure performance',
-        imgSrc: '/icons/email-icon.png',
+        imgSrc: '/icons/measure-performance-icon.png',
         primaryText: 'Measure your performance',
         secondaryText: 'Stay connected with your team and make quick decisions wherever you are.',
       },
